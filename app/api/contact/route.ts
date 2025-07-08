@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { contactMessagesTable } from "@/db/schema";
 import { z } from "zod";
+import nodemailer from "nodemailer";
 
 // Define validation schema
 const contactFormSchema = z.object({
@@ -10,6 +11,15 @@ const contactFormSchema = z.object({
   phone: z.string().optional(),
   organisation: z.string().optional(),
   message: z.string().min(10),
+});
+
+// Create Gmail transporter
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.NEXT_PUBLIC_APP_USER,
+    pass: process.env.NEXT_PUBLIC_APP_PASS,
+  },
 });
 
 export async function POST(request: Request) {
@@ -41,14 +51,33 @@ export async function POST(request: Request) {
       })
       .returning({ id: contactMessagesTable.id });
 
-    // Send email notification (you can implement this later)
-    // await sendNotificationEmail({ name, email, message });
+    // Send simple email notification to company
+    try {
+      const mailOptions = {
+        from: `"Contact Form" <${process.env.NEXT_PUBLIC_APP_USER}>`,
+        to: process.env.NEXT_PUBLIC_APP_USER, // Send to your company email
+        subject: `New Contact Message from ${name}`,
+        text: `${name} from ${email} the question is: ${message}`,
+        replyTo: email, // Allow easy reply to customer
+      };
 
-    return NextResponse.json({
-      success: true,
-      message: "Contact message received successfully",
-      id: insertedMessage[0].id,
-    });
+      // Send email
+      await transporter.sendMail(mailOptions);
+
+      return NextResponse.json({
+        success: true,
+        message: "Contact message received successfully and notification sent",
+        id: insertedMessage[0].id,
+      });
+    } catch (emailError) {
+      console.error("Failed to send email notification:", emailError);
+      // Message was saved but email failed - still return success
+      return NextResponse.json({
+        success: true,
+        message: "Contact message received successfully",
+        id: insertedMessage[0].id,
+      });
+    }
   } catch (error) {
     console.error("Error processing contact form submission:", error);
     return NextResponse.json(
