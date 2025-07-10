@@ -129,73 +129,59 @@ export async function POST(request: NextRequest) {
       // Format date properly to avoid invalid date errors
       const formatDateTime = (dateStr, timeStr) => {
         try {
-          // If date is already a Date object, convert to YYYY-MM-DD string
+          // Convert date to string if it's a Date object
           let formattedDate = "";
           if (dateStr instanceof Date) {
-            formattedDate = dateStr.toISOString().split("T")[0];
+            formattedDate = dateStr.toISOString().split("T")[0]; // YYYY-MM-DD
           } else if (typeof dateStr === "string") {
-            // Handle string date formats
-            formattedDate = String(dateStr);
+            // Extract just the date part if it's already in YYYY-MM-DD format
+            formattedDate = dateStr.split("T")[0];
           } else {
-            // Fallback to current date if invalid
             formattedDate = new Date().toISOString().split("T")[0];
           }
 
-          // Make sure timeStr is in HH:MM format
+          // Handle timeStr more carefully - it might contain full datetime
           let formattedTime = String(timeStr || "00:00");
 
-          // Remove any AM/PM indicators and convert to 24-hour format
-          if (formattedTime.includes("AM") || formattedTime.includes("am")) {
-            formattedTime = formattedTime.replace(/\s*AM|am/i, "");
-          } else if (
-            formattedTime.includes("PM") ||
-            formattedTime.includes("pm")
-          ) {
-            // Convert PM times to 24-hour format
-            const timeParts = formattedTime.replace(/\s*PM|pm/i, "").split(":");
-            const hours = parseInt(timeParts[0], 10);
-            const minutes = timeParts[1] || "00";
-            formattedTime = `${hours === 12 ? 12 : hours + 12}:${minutes}`;
+          // If timeStr contains a 'T', extract just the time part
+          if (formattedTime.includes("T")) {
+            const timePart = formattedTime.split("T")[1];
+            formattedTime = timePart ? timePart.split(".")[0] : "00:00"; // Remove milliseconds if present
           }
 
-          // Ensure time has minutes
+          // Remove any whitespace and Z suffix
+          formattedTime = formattedTime.trim().replace("Z", "");
+
+          // Ensure it has colon and is in HH:MM format
           if (!formattedTime.includes(":")) {
             formattedTime = `${formattedTime}:00`;
           }
 
-          // Create a proper ISO date string - use current date if parsing fails
-          try {
-            // Try direct ISO format first
-            const isoString = `${formattedDate}T${formattedTime}:00`;
-            const date = new Date(isoString);
+          // Parse the time components
+          const [hours, minutes] = formattedTime.split(":").map(Number);
+          const [year, month, day] = formattedDate.split("-").map(Number);
 
-            // Check if date is valid
-            if (!isNaN(date.getTime())) {
-              return date;
-            }
-            // Try parsing date components
-            if (
-              typeof formattedDate === "string" &&
-              formattedDate.includes("-")
-            ) {
-              const [year, month, day] = formattedDate.split("-").map(Number);
-              const [hours, minutes] = formattedTime.split(":").map(Number);
+          // Create a local date (not UTC) - this represents the actual event time
+          const date = new Date(year, month - 1, day, hours, minutes, 0, 0);
 
-              // Create date from components (month is 0-indexed in JS Date)
-              const date = new Date(year, month - 1, day, hours, minutes);
-              if (!isNaN(date.getTime())) {
-                return date;
-              }
-            }
-
-            // Last resort: return current date
-            return new Date();
-          } catch (parseErr) {
-            return new Date();
+          // Validate the date
+          if (isNaN(date.getTime())) {
+            console.warn(
+              `Invalid date created from: dateStr: ${dateStr}, timeStr: ${timeStr}`
+            );
+            return new Date(); // Return current date as fallback
           }
+
+          console.log(
+            `Successfully created local date: ${date.toISOString()} from dateStr: ${dateStr}, timeStr: ${timeStr}`
+          );
+          return date;
         } catch (err) {
-          // Return current date as fallback
-          return new Date();
+          console.error("Error in formatDateTime:", err);
+          console.error(
+            `Failed inputs - dateStr: ${dateStr}, timeStr: ${timeStr}`
+          );
+          return new Date(); // Return current date as fallback
         }
       };
 
@@ -294,7 +280,7 @@ export async function POST(request: NextRequest) {
 
       // Email options with attachments
       const mailOptions = {
-        from: `"Your App Name" <${process.env.NEXT_PUBLIC_APP_USER}>`,
+        from: `"Inspire Partners" <${process.env.NEXT_PUBLIC_APP_USER}>`,
         to: email,
         subject: `You're Registered for ${eventDetails.eventName}!`,
         html: emailHtml,

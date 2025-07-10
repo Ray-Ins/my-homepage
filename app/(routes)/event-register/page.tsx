@@ -66,7 +66,7 @@ export default function EventRegistrationPage() {
             <Calendar className="h-8 w-8 text-[#c5e2e6]" />
             <div>
               <h3 className="font-medium">Date</h3>
-              <p className="text-gray-600">Tuesday, 30 July 2025</p>
+              <p className="text-gray-600">Wednesday, 30 July 2025</p>
             </div>
           </div>
 
@@ -152,7 +152,7 @@ export default function EventRegistrationPage() {
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="w-32 h-32 relative flex-shrink-0 mx-auto sm:mx-0">
                   <Image
-                    src="/partners-avatars/David.png"
+                    src="/partners-avatars/David.jpg"
                     alt="David Li"
                     fill
                     className="rounded-full object-cover"
@@ -181,7 +181,7 @@ export default function EventRegistrationPage() {
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="w-32 h-32 relative flex-shrink-0 mx-auto sm:mx-0">
                   <Image
-                    src="/partners-avatars/Ray.png"
+                    src="/partners-avatars/Ray.jpg"
                     alt="Ray Jiang"
                     fill
                     className="rounded-full object-cover"

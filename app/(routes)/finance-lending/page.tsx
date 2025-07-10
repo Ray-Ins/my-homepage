@@ -13,17 +13,17 @@ export default function FinanceLendingPage() {
     "Investment Property Loans",
     "Refinancing",
     "Renovating / Knockdown Rebuilds",
-    "Guarantor loans",
+    "Guarantor Loans",
     "Private Banking Solutions",
   ];
 
   const commercialServices = [
-    "Business purchases & goodwill loans",
-    "Commercial property acquisition",
-    "Construction & development finance",
-    "Car & equipment loans",
-    "Medical finance",
-    "SMSF lending",
+    "Business Purchases & Goodwill Loans",
+    "Commercial Property Acquisition",
+    "Construction & Development Finance",
+    "Car & Equipment Loans",
+    "Medical Finance",
+    "SMSF Lending",
   ];
 
   return (
@@ -63,7 +63,7 @@ export default function FinanceLendingPage() {
           <div className="flex flex-col md:flex-row gap-6 items-center">
             <div className="w-32 h-32 relative flex-shrink-0">
               <Image
-                src="/partners-avatars/Ray.png"
+                src="/partners-avatars/Ray.jpg"
                 alt="Ray Jiang"
                 fill
                 className="rounded-full object-cover"

@@ -39,7 +39,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#003447] text-white pt-16 pb-8">
+    <footer className="bg-[#003447] pt-16 pb-8" style={{ color: "#e3d3a0" }}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1: Logo and About */}
@@ -50,10 +50,10 @@ const Footer = () => {
                 alt="Inspire Partners Logo"
                 width={150}
                 height={50}
-                className="h-auto invert brightness-0 filter"
+                // className="h-auto invert brightness-0 filter"
               />
             </Link>
-            <p className="text-gray-300 mt-4">
+            <p className="mt-4" style={{ color: "#e3d3a0" }}>
               Inspire Partners delivers a full-circle advisory model designed to
               help clients achieve wealth with clarity and confidence.
             </p>
@@ -63,6 +63,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#c5e2e6] transition-colors"
+                style={{ color: "#e3d3a0" }}
               >
                 <Facebook size={20} />
               </a>
@@ -71,6 +72,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#c5e2e6] transition-colors"
+                style={{ color: "#e3d3a0" }}
               >
                 <Instagram size={20} />
               </a>
@@ -79,6 +81,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#c5e2e6] transition-colors"
+                style={{ color: "#e3d3a0" }}
               >
                 <Linkedin size={20} />
               </a>
@@ -87,13 +90,16 @@ const Footer = () => {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4" style={{ color: "#e3d3a0" }}>
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               {mainLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[#c5e2e6] transition-colors"
+                    className="hover:text-[#c5e2e6] transition-colors"
+                    style={{ color: "#e3d3a0" }}
                   >
                     {link.label}
                   </Link>
@@ -104,13 +110,16 @@ const Footer = () => {
 
           {/* Column 3: Our Services */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Our Services</h3>
+            <h3 className="text-lg font-bold mb-4" style={{ color: "#e3d3a0" }}>
+              Our Services
+            </h3>
             <ul className="space-y-2">
               {serviceLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[#c5e2e6] transition-colors"
+                    className="hover:text-[#c5e2e6] transition-colors"
+                    style={{ color: "#e3d3a0" }}
                   >
                     {link.label}
                   </Link>
@@ -121,28 +130,32 @@ const Footer = () => {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-4" style={{ color: "#e3d3a0" }}>
+              Contact Us
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-[#c5e2e6] mr-2 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">
+                <MapPin className="h-5 w-5 text-[#e3d3a0] mr-2 flex-shrink-0 mt-0.5" />
+                <span style={{ color: "#e3d3a0" }}>
                   L1/534 Whitehorse Road, Mitcham, Vic 3132
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-[#c5e2e6] mr-2 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-[#e3d3a0] mr-2 flex-shrink-0" />
                 <a
                   href="tel:+61398723020"
-                  className="text-gray-300 hover:text-[#c5e2e6] transition-colors"
+                  className="hover:text-[#c5e2e6] transition-colors"
+                  style={{ color: "#e3d3a0" }}
                 >
                   (03) 9872 3020
                 </a>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-[#c5e2e6] mr-2 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-[#e3d3a0] mr-2 flex-shrink-0" />
                 <a
                   href="mailto:info@inspirepartners.com.au"
-                  className="text-gray-300 hover:text-[#c5e2e6] transition-colors"
+                  className="hover:text-[#c5e2e6] transition-colors"
+                  style={{ color: "#e3d3a0" }}
                 >
                   info@inspirepartners.com.au
                 </a>
@@ -154,18 +167,22 @@ const Footer = () => {
         <Separator className="bg-gray-700 my-8" />
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p>© {currentYear} Inspire Partners. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm">
+          <p style={{ color: "#e3d3a0" }}>
+            © {currentYear} Inspire Partners. All rights reserved.
+          </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="/privacy-policy"
               className="hover:text-[#c5e2e6] transition-colors"
+              style={{ color: "#e3d3a0" }}
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-of-service"
               className="hover:text-[#c5e2e6] transition-colors"
+              style={{ color: "#e3d3a0" }}
             >
               Terms of Service
             </Link>

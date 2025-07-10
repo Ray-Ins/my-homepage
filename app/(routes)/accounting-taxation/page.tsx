@@ -131,7 +131,7 @@ export default function AccountingTaxationPage() {
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-[#2a8e9e] mr-2 flex-shrink-0" />
-                <p>Proactive tax planning to minimize liabilities</p>
+                <p>Proactive tax planning to minimise liabilities</p>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-[#2a8e9e] mr-2 flex-shrink-0" />

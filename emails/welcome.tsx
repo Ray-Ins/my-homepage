@@ -43,6 +43,63 @@ const safeParseDate = (dateString: string) => {
   }
 };
 
+// Helper function to format date and time correctly
+const formatEventDateTime = (eventStartTime: string) => {
+  try {
+    // Parse the ISO string directly without timezone conversion
+    const isoString = eventStartTime;
+
+    // Extract date and time components directly from the ISO string
+    // Format: "2025-07-30T20:30:00.000Z"
+    const [datePart, timePart] = isoString.split("T");
+
+    if (!datePart || !timePart) {
+      throw new Error("Invalid ISO string format");
+    }
+
+    // Parse date components
+    const [year, month, day] = datePart.split("-").map(Number);
+
+    // Parse time components (remove Z and any milliseconds)
+    const timeOnly = timePart.replace("Z", "").split(".")[0]; // "20:30:00"
+    const [hours, minutes] = timeOnly.split(":").map(Number);
+
+    // Format date
+    const dateObj = new Date(year, month - 1, day); // month is 0-indexed
+    const eventDate = dateObj.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    // Format time - convert 24h to 12h format
+    let displayHours = hours;
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    if (hours === 0) {
+      displayHours = 12; // 00:xx becomes 12:xx AM
+    } else if (hours > 12) {
+      displayHours = hours - 12; // 13:xx becomes 1:xx PM
+    }
+
+    const eventTime = `${displayHours}:${minutes.toString().padStart(2, "0")} ${ampm}`;
+
+    return { eventDate, eventTime };
+  } catch (err) {
+    console.error(
+      "Error formatting event date/time:",
+      err,
+      "Input:",
+      eventStartTime
+    );
+    return {
+      eventDate: "Date to be announced",
+      eventTime: "Time to be announced",
+    };
+  }
+};
+
 export default function WelcomeEmail({
   name,
   email,
@@ -64,25 +121,10 @@ export default function WelcomeEmail({
   let eventTime = "";
 
   if (hasEventDetails) {
-    try {
-      // Format date for display
-      const startDate = safeParseDate(eventStartTime!);
-
-      eventDate = startDate.toLocaleDateString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
-      eventTime = startDate.toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-    } catch (err) {
-      eventDate = "Date to be announced";
-      eventTime = "Time to be announced";
-    }
+    const { eventDate: formattedDate, eventTime: formattedTime } =
+      formatEventDateTime(eventStartTime!);
+    eventDate = formattedDate;
+    eventTime = formattedTime;
   }
 
   return (
@@ -144,17 +186,7 @@ export default function WelcomeEmail({
                       </Link>
                     </Text>
                   )}
-                  {organizerEmail && (
-                    <Text className="text-gray-600 text-base leading-6 mb-2">
-                      <strong>Organizer:</strong>{" "}
-                      <Link
-                        href={`mailto:${organizerEmail}`}
-                        className="text-[#003447] underline"
-                      >
-                        {organizerEmail}
-                      </Link>
-                    </Text>
-                  )}
+
                   {/* Webinar Image - if webinar image CID is provided */}
                   {webinarImageCid && (
                     <Section className="text-center mb-4">
