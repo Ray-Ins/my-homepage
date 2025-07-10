@@ -9,7 +9,7 @@ export default function AdminEventConfigPage() {
         the database and will be available for users to select during
         registration.
       </p>
-      <EventConfigForm />
+      {/* <EventConfigForm /> */}
     </div>
   );
 }

@@ -10,6 +10,7 @@
     "email:dev": "email dev",
     "email:preview": "email preview",
     "test:ics": "tsx scripts/test-ics.ts",
+    "update:event-time": "tsx scripts/update-event-time.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",

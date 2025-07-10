@@ -56,8 +56,10 @@ const Header = () => {
   const linkStyle = (path: string) => {
     const isActive = pathname === path;
     return {
-      color: isActive ? "#2a8e9e" : "inherit",
-      fontWeight: isActive ? "600" : "500",
+      color: "#e3d3a0",
+      // fontWeight: isActive ? "600" : "500",
+      // borderBottom: isActive ? "2px solid #e3d3a0" : "2px solid transparent",
+      // paddingBottom: "4px",
     };
   };
 
@@ -71,7 +73,7 @@ const Header = () => {
     { href: "/accounting-taxation", label: "Accounting & Taxation" },
     { href: "/finance-lending", label: "Finance and Lending" },
     { href: "/specialised-industries", label: "Specialised Industries" },
-    { href: "/affiliate-service", label: "Affiliate Service" },
+    { href: "/affiliate-services", label: "Affiliate Services" },
     { href: "/event-register", label: "Events" },
     { href: "/contact", label: "Contact" },
   ];
@@ -82,7 +84,7 @@ const Header = () => {
         scrolled ? "shadow-md" : ""
       }`}
       style={{
-        backgroundColor: `rgba(255, 255, 255, ${opacity})`,
+        backgroundColor: `rgba(0, 52, 71, ${opacity})`, // Changed from white to footer's color #003447
         backdropFilter: scrolled ? "blur(5px)" : "none",
       }}
     >
@@ -94,7 +96,8 @@ const Header = () => {
             alt="Company Logo"
             width={150}
             height={50}
-            className="h-auto"
+            // Added invert to make logo visible on dark background
+            // className="h-auto invert brightness-0 filter"
           />
         </Link>
 
@@ -106,7 +109,7 @@ const Header = () => {
                 <NavigationMenuLink
                   asChild
                   style={linkStyle(link.href)}
-                  className="hover:text-[#2a8e9e] transition-colors text-md font-montaga"
+                  className=" hover:border-[#e3d3a0] focus:border-2 focus:border-[#e3d3a0] focus:outline-none hover:bg-transparent focus:bg-transparent transition-all text-md "
                 >
                   <Link href={link.href}>{link.label}</Link>
                 </NavigationMenuLink>
@@ -116,7 +119,8 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-[#2a8e9e] cursor-pointer"
+            className="md:hidden cursor-pointer focus:outline-none focus:border-2 focus:border-[#e3d3a0] focus:bg-transparent hover:bg-transparent rounded p-1"
+            style={{ color: "#e3d3a0" }}
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -140,18 +144,22 @@ const Header = () => {
       </div>
       {/* Mobile menu dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b shadow-lg z-50">
+        <div
+          className="md:hidden absolute top-full left-0 w-full border-b shadow-lg z-50"
+          style={{ backgroundColor: "#003447" }}
+        >
           <nav className="container mx-auto py-4">
             <ul className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block px-4 py-2 hover:bg-gray-50 hover:text-[#2a8e9e] transition-colors ${
+                    className={`block px-4 py-2 hover:border-l-4 hover:border-[#e3d3a0] focus:border-l-4 focus:border-[#e3d3a0] focus:outline-none hover:bg-transparent focus:bg-transparent transition-all ${
                       pathname === link.href
-                        ? "text-[#2a8e9e] font-semibold"
-                        : ""
+                        ? "font-semibold border-l-4 border-[#e3d3a0]"
+                        : "border-l-4 border-transparent"
                     }`}
+                    style={{ color: "#e3d3a0" }}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}

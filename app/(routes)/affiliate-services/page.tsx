@@ -21,7 +21,7 @@ export default function AffiliateServicePage() {
       title: "Property Advisory",
       icon: <Home className="h-10 w-10 text-[#003447]" />,
       description:
-        "We partner with experienced third-party property advisors who bring deep knowledge of the Melbourne market. Whether you're a first-time buyer, upgrader, or investor, our affiliate experts help you navigate the complex property landscape with confidence — from market analysis and property selection to negotiation and settlement.",
+        "We partner with experienced third-party property advisors who bring deep knowledge of the Australian property market. Whether you're a first-time buyer, upgrader, or investor, our affiliate experts help you navigate the complex property landscape with confidence — from market analysis and property selection to negotiation and settlement.",
       tagline:
         "We connect you to the right professionals so you can make informed, strategic property decisions.",
       image: "/denise-jans--gmtAa0Q5MI-unsplash.jpg",
