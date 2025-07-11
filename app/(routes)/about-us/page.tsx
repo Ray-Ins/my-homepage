@@ -8,22 +8,30 @@ import { Badge } from "@/components/ui/badge";
 export default function AboutUsPage() {
   return (
     <div
-      className="container mx-auto py-12 min-h-screen"
-      style={{ backgroundColor: "#003447", color: "#e3d3a0" }}
+      className=" py-12 min-h-screen relative"
+      style={{
+        backgroundColor: "#003447",
+        color: "#052f46",
+        backgroundImage: `url('/background/background.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
     >
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto mb-16 text-center">
         <Badge
           variant="outline"
           className="px-4 py-1 mb-6 inline-flex"
-          style={{ color: "#e3d3a0", borderColor: "#e3d3a0" }}
+          style={{ color: "#052f46", borderColor: "#052f46" }}
         >
           Our Story
         </Badge>
-        <h1 className="text-4xl font-bold mb-6" style={{ color: "#e3d3a0" }}>
+        <h1 className="text-4xl font-bold mb-6" style={{ color: "#052f46" }}>
           Built on Logic, Driven by Results
         </h1>
-        <p className="max-w-3xl mx-auto" style={{ color: "#e3d3a0" }}>
+        <p className="max-w-3xl mx-auto" style={{ color: "#052f46" }}>
           Inspire Partners was founded by David Li and Ray Jiang — two
           professionals who believe clients deserve more than fragmented
           financial services. Combining over 25 years of experience in
@@ -40,11 +48,11 @@ export default function AboutUsPage() {
           <div className="text-center">
             <h2
               className="text-2xl font-bold mb-6"
-              style={{ color: "#e3d3a0" }}
+              style={{ color: "#052f46" }}
             >
               Logo Story
             </h2>
-            <p className="max-w-4xl mx-auto" style={{ color: "#e3d3a0" }}>
+            <p className="max-w-4xl mx-auto" style={{ color: "#052f46" }}>
               The Tree of Life in our logo embodies the essence of Inspire
               Partners: strong foundations, supportive partnerships, and
               flourishing growth. Each element reflects a stage of the financial
@@ -59,17 +67,17 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <Separator className="bg-[#e3d3a0]" />
+          <Separator className="bg-[#052f46]" />
 
           {/* Our Vision */}
           <div className="text-center">
             <h2
               className="text-2xl font-bold mb-6"
-              style={{ color: "#e3d3a0" }}
+              style={{ color: "#052f46" }}
             >
               Our Vision
             </h2>
-            <p className="max-w-4xl mx-auto" style={{ color: "#e3d3a0" }}>
+            <p className="max-w-4xl mx-auto" style={{ color: "#052f46" }}>
               At Inspire Partners, we see life as a journey — one where every
               decision shapes your future. Like the Tree of Life, we&apos;re
               deeply rooted in relationships, growing stronger through shared
@@ -82,17 +90,17 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <Separator className="bg-[#e3d3a0]" />
+          <Separator className="bg-[#052f46]" />
 
           {/* Our Mission */}
           <div className="text-center">
             <h2
               className="text-2xl font-bold mb-6"
-              style={{ color: "#e3d3a0" }}
+              style={{ color: "#052f46" }}
             >
               Our Mission
             </h2>
-            <p className="max-w-4xl mx-auto" style={{ color: "#e3d3a0" }}>
+            <p className="max-w-4xl mx-auto" style={{ color: "#052f46" }}>
               At Inspire Partners, our mission is to empower Australians to grow
               and thrive financially through every stage of life. We provide
               tailored taxation, lending, and financial solutions with a human
@@ -109,7 +117,7 @@ export default function AboutUsPage() {
       <div className="max-w-6xl mx-auto mb-16">
         <h2
           className="text-2xl font-bold mb-8 text-center"
-          style={{ color: "#e3d3a0" }}
+          style={{ color: "#052f46" }}
         >
           Meet Our Team
         </h2>
@@ -120,7 +128,7 @@ export default function AboutUsPage() {
             className="p-6"
             style={{
               backgroundColor: "rgba(227, 211, 160, 0.1)",
-              borderColor: "#e3d3a0",
+              borderColor: "#052f46",
             }}
           >
             <div className="flex flex-col items-center text-center md:text-left md:flex-row gap-6">
@@ -135,14 +143,14 @@ export default function AboutUsPage() {
               <CardContent className="p-0">
                 <h3
                   className="text-xl font-bold mb-1"
-                  style={{ color: "#e3d3a0" }}
+                  style={{ color: "#052f46" }}
                 >
                   David Li
                 </h3>
-                <p className="mb-3" style={{ color: "#c5e2e6" }}>
+                <p className="mb-3" style={{ color: "#052f46" }}>
                   CPA & Registered Tax Agent
                 </p>
-                <p style={{ color: "#e3d3a0" }}>
+                <p style={{ color: "#052f46" }}>
                   With 15+ years of experience and an engineering background,
                   David brings a first-principles mindset to accounting. He
                   specialises in small to medium business tax, particularly in
@@ -160,7 +168,7 @@ export default function AboutUsPage() {
             className="p-6"
             style={{
               backgroundColor: "rgba(227, 211, 160, 0.1)",
-              borderColor: "#e3d3a0",
+              borderColor: "#052f46",
             }}
           >
             <div className="flex flex-col items-center text-center md:text-left md:flex-row gap-6">
@@ -175,14 +183,14 @@ export default function AboutUsPage() {
               <CardContent className="p-0">
                 <h3
                   className="text-xl font-bold mb-1"
-                  style={{ color: "#e3d3a0" }}
+                  style={{ color: "#052f46" }}
                 >
                   Ray Jiang
                 </h3>
-                <p className="mb-3" style={{ color: "#c5e2e6" }}>
+                <p className="mb-3" style={{ color: "#052f46" }}>
                   Finance Broker & Property Expert
                 </p>
-                <p style={{ color: "#e3d3a0" }}>
+                <p style={{ color: "#052f46" }}>
                   Ray is a former ANZ banker with over a decade in the property
                   and finance industry. His never-give-up attitude and attention
                   to detail have helped countless clients secure residential and
@@ -200,18 +208,18 @@ export default function AboutUsPage() {
         className="max-w-6xl mx-auto mb-16 p-12 rounded-lg"
         style={{
           backgroundColor: "rgba(227, 211, 160, 0.1)",
-          border: "1px solid #e3d3a0",
+          border: "1px solid #052f46",
         }}
       >
         <h2
           className="text-2xl font-bold mb-6 text-center"
-          style={{ color: "#e3d3a0" }}
+          style={{ color: "#052f46" }}
         >
           Our Vision
         </h2>
         <p
           className="text-center max-w-3xl mx-auto"
-          style={{ color: "#e3d3a0" }}
+          style={{ color: "#052f46" }}
         >
           To provide holistic financial services that build long-term
           relationships, transform high-income earners into high-net-worth
@@ -224,7 +232,7 @@ export default function AboutUsPage() {
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-2xl font-bold mb-8 text-center"
-          style={{ color: "#e3d3a0" }}
+          style={{ color: "#052f46" }}
         >
           Why Choose Inspire Partners?
         </h2>
@@ -245,12 +253,12 @@ export default function AboutUsPage() {
               className="p-6 flex items-center justify-center"
               style={{
                 backgroundColor: "rgba(227, 211, 160, 0.1)",
-                borderColor: "#e3d3a0",
+                borderColor: "#052f46",
               }}
             >
               <p
                 className="text-center font-medium"
-                style={{ color: "#e3d3a0" }}
+                style={{ color: "#052f46" }}
               >
                 {item}
               </p>

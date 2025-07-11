@@ -22,7 +22,7 @@ const Footer = () => {
     { href: "/accounting-taxation", label: "Accounting & Taxation" },
     { href: "/finance-lending", label: "Finance and Lending" },
     { href: "/specialised-industries", label: "Specialised Industries" },
-    { href: "/affiliate-service", label: "Affiliate Service" },
+    { href: "/extended-services", label: "Extended Services" },
     { href: "/event-register", label: "Events" },
     { href: "/contact", label: "Contact" },
   ];
@@ -34,12 +34,12 @@ const Footer = () => {
     { href: "/accounting-taxation", label: "SMSF" },
     { href: "/finance-lending", label: "Residential Lending" },
     { href: "/finance-lending", label: "Commercial Lending" },
-    { href: "/affiliate-service", label: "Property Advisory" },
-    { href: "/affiliate-service", label: "Financial Planning" },
+    { href: "/extended-services", label: "Property Advisory" },
+    { href: "/extended-services", label: "Financial Planning" },
   ];
 
   return (
-    <footer className="bg-[#003447] pt-16 pb-8" style={{ color: "#e3d3a0" }}>
+    <footer className="bg-[#052f46] pt-16 pb-8" style={{ color: "#f5e5be" }}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1: Logo and About */}
@@ -50,10 +50,9 @@ const Footer = () => {
                 alt="Inspire Partners Logo"
                 width={150}
                 height={50}
-                // className="h-auto invert brightness-0 filter"
               />
             </Link>
-            <p className="mt-4" style={{ color: "#e3d3a0" }}>
+            <p className="mt-4" style={{ color: "#f5e5be" }}>
               Inspire Partners delivers a full-circle advisory model designed to
               help clients achieve wealth with clarity and confidence.
             </p>
@@ -63,7 +62,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#c5e2e6] transition-colors"
-                style={{ color: "#e3d3a0" }}
+                style={{ color: "#f5e5be" }}
               >
                 <Facebook size={20} />
               </a>
@@ -72,7 +71,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#c5e2e6] transition-colors"
-                style={{ color: "#e3d3a0" }}
+                style={{ color: "#f5e5be" }}
               >
                 <Instagram size={20} />
               </a>
@@ -81,7 +80,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#c5e2e6] transition-colors"
-                style={{ color: "#e3d3a0" }}
+                style={{ color: "#f5e5be" }}
               >
                 <Linkedin size={20} />
               </a>
@@ -90,7 +89,7 @@ const Footer = () => {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4" style={{ color: "#e3d3a0" }}>
+            <h3 className="text-lg font-bold mb-4" style={{ color: "#f5e5be" }}>
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -99,7 +98,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className="hover:text-[#c5e2e6] transition-colors"
-                    style={{ color: "#e3d3a0" }}
+                    style={{ color: "#f5e5be" }}
                   >
                     {link.label}
                   </Link>
@@ -110,7 +109,7 @@ const Footer = () => {
 
           {/* Column 3: Our Services */}
           <div>
-            <h3 className="text-lg font-bold mb-4" style={{ color: "#e3d3a0" }}>
+            <h3 className="text-lg font-bold mb-4" style={{ color: "#f5e5be" }}>
               Our Services
             </h3>
             <ul className="space-y-2">
@@ -119,7 +118,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className="hover:text-[#c5e2e6] transition-colors"
-                    style={{ color: "#e3d3a0" }}
+                    style={{ color: "#f5e5be" }}
                   >
                     {link.label}
                   </Link>
@@ -130,35 +129,62 @@ const Footer = () => {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4" style={{ color: "#e3d3a0" }}>
+            <h3 className="text-lg font-bold mb-4" style={{ color: "#f5e5be" }}>
               Contact Us
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-[#e3d3a0] mr-2 flex-shrink-0 mt-0.5" />
-                <span style={{ color: "#e3d3a0" }}>
+                <MapPin
+                  className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5"
+                  style={{ color: "#f5e5be" }}
+                />
+                <span style={{ color: "#f5e5be" }}>
                   L1/534 Whitehorse Road, Mitcham, Vic 3132
                 </span>
               </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-[#e3d3a0] mr-2 flex-shrink-0" />
-                <a
-                  href="tel:+61398723020"
-                  className="hover:text-[#c5e2e6] transition-colors"
-                  style={{ color: "#e3d3a0" }}
-                >
-                  (03) 9872 3020
-                </a>
+              <li className="flex items-start">
+                <Phone
+                  className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5"
+                  style={{ color: "#f5e5be" }}
+                />
+                <div className="flex flex-col space-y-1">
+                  <a
+                    href="tel:+61449588614"
+                    className="hover:text-[#c5e2e6] transition-colors"
+                    style={{ color: "#f5e5be" }}
+                  >
+                    04 4958 8614 Ray
+                  </a>
+                  <a
+                    href="tel:+61466098666"
+                    className="hover:text-[#c5e2e6] transition-colors"
+                    style={{ color: "#f5e5be" }}
+                  >
+                    04 6609 8666 David
+                  </a>
+                </div>
               </li>
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 text-[#e3d3a0] mr-2 flex-shrink-0" />
-                <a
-                  href="mailto:info@inspirepartners.com.au"
-                  className="hover:text-[#c5e2e6] transition-colors"
-                  style={{ color: "#e3d3a0" }}
-                >
-                  info@inspirepartners.com.au
-                </a>
+              <li className="flex items-start">
+                <Mail
+                  className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5"
+                  style={{ color: "#f5e5be" }}
+                />
+                <div className="flex flex-col space-y-1">
+                  <a
+                    href="mailto:RayJ@inspirepartners.com.au"
+                    className="hover:text-[#c5e2e6] transition-colors"
+                    style={{ color: "#f5e5be" }}
+                  >
+                    RayJ@inspirepartners.com.au
+                  </a>
+                  <a
+                    href="mailto:DavidL@inspirepartners.com.au"
+                    className="hover:text-[#c5e2e6] transition-colors"
+                    style={{ color: "#f5e5be" }}
+                  >
+                    DavidL@inspirepartners.com.au
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -168,21 +194,21 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm">
-          <p style={{ color: "#e3d3a0" }}>
+          <p style={{ color: "#f5e5be" }}>
             © {currentYear} Inspire Partners. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="/privacy-policy"
               className="hover:text-[#c5e2e6] transition-colors"
-              style={{ color: "#e3d3a0" }}
+              style={{ color: "#f5e5be" }}
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-of-service"
               className="hover:text-[#c5e2e6] transition-colors"
-              style={{ color: "#e3d3a0" }}
+              style={{ color: "#f5e5be" }}
             >
               Terms of Service
             </Link>

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { TrendingUp, Home, LineChart } from "lucide-react";
 
-export default function AffiliateServicePage() {
+export default function ExtendedServicePage() {
   const services = [
     {
       title: "Equity/Debt Investment",
@@ -52,14 +52,15 @@ export default function AffiliateServicePage() {
           variant="outline"
           className="text-[#2a8e9e] px-4 py-1 mb-6 inline-flex mx-auto"
         >
-          Affiliate Services
+          Extended Services
         </Badge>
         <h1 className="text-4xl font-bold mb-6">
           Expert Partners for Your Complete Financial Journey
         </h1>
         <p className="text-gray-600 max-w-3xl mx-auto">
-          We&apos;ve built relationships with trusted specialists to provide you
-          with comprehensive financial solutions beyond our core services.
+          We&apos;ve built a network of trusted professionals to provide
+          seamless support in areas like financial planning, legal advice, and
+          more.
         </p>
       </div>
 

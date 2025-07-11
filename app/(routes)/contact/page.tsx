@@ -46,12 +46,20 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="font-semibold text-lg">Email</h3>
-              <a
-                href="mailto:info@inspirepartners.com.au"
-                className="text-[#2a8e9e] hover:underline"
-              >
-                info@inspirepartners.com.au
-              </a>
+              <div className="flex flex-col space-y-1">
+                <a
+                  href="mailto:RayJ@inspirepartners.com.au"
+                  className="text-[#2a8e9e] hover:underline"
+                >
+                  RayJ@inspirepartners.com.au
+                </a>
+                <a
+                  href="mailto:DavidL@inspirepartners.com.au"
+                  className="text-[#2a8e9e] hover:underline"
+                >
+                  DavidL@inspirepartners.com.au
+                </a>
+              </div>
             </div>
           </div>
 
@@ -61,12 +69,20 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="font-semibold text-lg">Phone</h3>
-              <a
-                href="tel:+61398723020"
-                className="text-[#2a8e9e] hover:underline"
-              >
-                (03) 9872 3020
-              </a>
+              <div className="flex flex-col space-y-1">
+                <a
+                  href="tel:+61449588614"
+                  className="text-[#2a8e9e] hover:underline"
+                >
+                  04 4958 8614 Ray
+                </a>
+                <a
+                  href="tel:+61466098666"
+                  className="text-[#2a8e9e] hover:underline"
+                >
+                  04 6609 8666 David
+                </a>
+              </div>
             </div>
           </div>
 
