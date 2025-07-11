@@ -10,7 +10,7 @@ export default function ExtendedServicePage() {
   const services = [
     {
       title: "Equity/Debt Investment",
-      icon: <TrendingUp className="h-10 w-10 text-[#003447]" />,
+      icon: <TrendingUp className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
         "Through our trusted investment partners, we provide access to high-quality property, equity, and debt investment opportunities for high-net-worth (HNW) individuals — opportunities typically reserved for investment banks and family offices. These curated offerings are sourced and managed by third-party experts, with a focus on strong fundamentals, risk-adjusted returns, and transparency.",
       tagline:
@@ -19,7 +19,7 @@ export default function ExtendedServicePage() {
     },
     {
       title: "Property Advisory",
-      icon: <Home className="h-10 w-10 text-[#003447]" />,
+      icon: <Home className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
         "We partner with experienced third-party property advisors who bring deep knowledge of the Australian property market. Whether you're a first-time buyer, upgrader, or investor, our affiliate experts help you navigate the complex property landscape with confidence — from market analysis and property selection to negotiation and settlement.",
       tagline:
@@ -28,7 +28,7 @@ export default function ExtendedServicePage() {
     },
     {
       title: "Financial Planning",
-      icon: <LineChart className="h-10 w-10 text-[#003447]" />,
+      icon: <LineChart className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
         "Through our trusted financial planning partners, we offer clients access to holistic advice tailored to every stage of life. Whether you're building wealth, protecting your family, or planning for the future, our affiliate advisors can assist with:",
       tagline:
@@ -45,19 +45,31 @@ export default function ExtendedServicePage() {
   ];
 
   return (
-    <div className="container mx-auto py-12">
+    <div
+      className="py-12 min-h-screen relative"
+      style={{
+        backgroundColor: "#003447",
+        color: "#052f46",
+        backgroundImage: `url('/background/background.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       {/* Hero Section */}
-      <div className="max-w-6xl mx-auto mb-16 text-center">
+      <div className="max-w-6xl mx-auto mb-16 text-center container">
         <Badge
           variant="outline"
-          className="text-[#2a8e9e] px-4 py-1 mb-6 inline-flex mx-auto"
+          className="px-4 py-1 mb-6 inline-flex mx-auto"
+          style={{ color: "#052f46", borderColor: "#052f46" }}
         >
           Extended Services
         </Badge>
-        <h1 className="text-4xl font-bold mb-6">
+        <h1 className="text-4xl font-bold mb-6" style={{ color: "#052f46" }}>
           Expert Partners for Your Complete Financial Journey
         </h1>
-        <p className="text-gray-600 max-w-3xl mx-auto">
+        <p className="max-w-3xl mx-auto" style={{ color: "#052f46" }}>
           We&apos;ve built a network of trusted professionals to provide
           seamless support in areas like financial planning, legal advice, and
           more.
@@ -65,7 +77,7 @@ export default function ExtendedServicePage() {
       </div>
 
       {/* Services Section */}
-      <div className="max-w-6xl mx-auto space-y-24">
+      <div className="max-w-6xl mx-auto space-y-24 container">
         {services.map((service, index) => (
           <div
             key={index}
@@ -87,24 +99,39 @@ export default function ExtendedServicePage() {
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="bg-[#c5e2e6] p-3 rounded-full flex-shrink-0">
+                <div
+                  className="p-3 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: "rgba(5, 47, 70, 0.1)" }}
+                >
                   {service.icon}
                 </div>
-                <h2 className="text-2xl font-bold">{service.title}</h2>
+                <h2 className="text-2xl font-bold" style={{ color: "#052f46" }}>
+                  {service.title}
+                </h2>
               </div>
 
-              <p className="text-gray-600">{service.description}</p>
+              <p className="font-medium" style={{ color: "#052f46" }}>
+                {service.description}
+              </p>
 
               {service.bulletPoints && (
-                <ul className="space-y-3 pl-5 list-disc text-gray-600">
+                <ul className="space-y-3 pl-5 list-disc">
                   {service.bulletPoints.map((point, i) => (
-                    <li key={i}>{point}</li>
+                    <li key={i} style={{ color: "#052f46" }}>
+                      {point}
+                    </li>
                   ))}
                 </ul>
               )}
 
-              <div className="bg-[#f0f9fa] border-l-4 border-[#2a8e9e] p-4">
-                <p className="text-[#003447] italic font-medium">
+              <div
+                className="border-l-4 p-4"
+                style={{
+                  backgroundColor: "rgba(5, 47, 70, 0.1)",
+                  borderColor: "#052f46",
+                }}
+              >
+                <p className="italic font-medium" style={{ color: "#052f46" }}>
                   {service.tagline}
                 </p>
               </div>
@@ -114,17 +141,25 @@ export default function ExtendedServicePage() {
       </div>
 
       {/* CTA Section */}
-      <div className="max-w-6xl mx-auto mt-24 bg-[#003447] text-white p-12 rounded-lg text-center">
-        <h2 className="text-2xl font-bold mb-6">
+      <div
+        className="max-w-6xl mx-auto mt-24 p-12 rounded-lg text-center container"
+        style={{
+          backgroundColor: "rgba(5, 47, 70, 0.1)",
+          borderColor: "#052f46",
+          border: "1px solid #052f46",
+        }}
+      >
+        <h2 className="text-2xl font-bold mb-6" style={{ color: "#052f46" }}>
           Ready to connect with our affiliate partners?
         </h2>
-        <p className="max-w-2xl mx-auto mb-8">
+        <p className="max-w-2xl mx-auto mb-8" style={{ color: "#052f46" }}>
           Our network of trusted professionals is ready to help you achieve your
           financial goals. Let us make the right introduction for your needs.
         </p>
         <a
           href="/contact"
-          className="px-8 py-3 bg-white text-[#003447] font-medium rounded-md hover:bg-gray-100 transition-colors inline-block"
+          className="px-8 py-3 font-medium rounded-md hover:bg-gray-100 transition-colors inline-block"
+          style={{ backgroundColor: "#052f46", color: "#f5e5be" }}
         >
           Get in Touch
         </a>

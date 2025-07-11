@@ -50,12 +50,21 @@ export default function CustomerReviews() {
   };
 
   return (
-    <section className="py-16 bg-white font-montaga">
+    <section
+      className="py-16 font-montaga"
+      style={{ backgroundColor: "transparent" }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-2">
+        <h2
+          className="text-3xl font-bold text-center mb-2"
+          style={{ color: "#052f46" }}
+        >
           What Our Customers Say
         </h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        <p
+          className="text-center mb-12 max-w-2xl mx-auto font-medium"
+          style={{ color: "#052f46" }}
+        >
           Don&apos;t just take our word for it. Here&apos;s what participants
           have to say about our events.
         </p>
@@ -67,9 +76,19 @@ export default function CustomerReviews() {
               <Card
                 key={review.id}
                 className="w-full max-w-sm shadow-lg hover:shadow-xl transition-shadow duration-300 relative"
+                style={{
+                  backgroundColor: "rgba(227, 211, 160, 0.1)",
+                  borderColor: "#052f46",
+                }}
               >
-                <div className="absolute -top-3 -right-3 bg-[#003447] opacity-80 rounded-full p-4 shadow-lg">
-                  <MessageSquareMore className="h-10 w-10 text-white" />
+                <div
+                  className="absolute -top-3 -right-3 rounded-full p-4 shadow-lg"
+                  style={{ backgroundColor: "#052f46", opacity: 0.8 }}
+                >
+                  <MessageSquareMore
+                    className="h-10 w-10"
+                    style={{ color: "#f5e5be" }}
+                  />
                 </div>
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
@@ -82,8 +101,15 @@ export default function CustomerReviews() {
                       />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg ">{review.name}</h3>
-                      <p className="text-gray-500 text-sm">{review.position}</p>
+                      <h3
+                        className="font-semibold text-lg"
+                        style={{ color: "#052f46" }}
+                      >
+                        {review.name}
+                      </h3>
+                      <p className="text-sm" style={{ color: "#052f46" }}>
+                        {review.position}
+                      </p>
                     </div>
                   </div>
 
@@ -91,12 +117,20 @@ export default function CustomerReviews() {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`h-6 w-6 ${i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                        className={`h-6 w-6 ${i < review.rating ? "fill-yellow-400" : ""}`}
+                        style={{
+                          color: i < review.rating ? "#fbbf24" : "#052f46",
+                        }}
                       />
                     ))}
                   </div>
 
-                  <p className="text-gray-700 font-montaga">{review.review}</p>
+                  <p
+                    className="font-montaga font-medium"
+                    style={{ color: "#052f46" }}
+                  >
+                    {review.review}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -104,9 +138,21 @@ export default function CustomerReviews() {
 
           {/* Mobile View - Show one review at a time with navigation */}
           <div className="md:hidden w-full max-w-md">
-            <Card className="shadow-lg relative">
-              <div className="absolute -top-3 -right-3 bg-[#003447] rounded-full p-2 shadow-md">
-                <MessageSquareMore className="h-5 w-5 text-white" />
+            <Card
+              className="shadow-lg relative"
+              style={{
+                backgroundColor: "rgba(227, 211, 160, 0.1)",
+                borderColor: "#052f46",
+              }}
+            >
+              <div
+                className="absolute -top-3 -right-3 rounded-full p-2 shadow-md"
+                style={{ backgroundColor: "#052f46" }}
+              >
+                <MessageSquareMore
+                  className="h-5 w-5"
+                  style={{ color: "#f5e5be" }}
+                />
               </div>
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
@@ -119,10 +165,13 @@ export default function CustomerReviews() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">
+                    <h3
+                      className="font-semibold text-lg"
+                      style={{ color: "#052f46" }}
+                    >
                       {reviewsData[activeIndex].name}
                     </h3>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-sm" style={{ color: "#052f46" }}>
                       {reviewsData[activeIndex].position}
                     </p>
                   </div>
@@ -132,37 +181,51 @@ export default function CustomerReviews() {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`h-5 w-5 ${i < reviewsData[activeIndex].rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                      className={`h-5 w-5 ${i < reviewsData[activeIndex].rating ? "fill-yellow-400" : ""}`}
+                      style={{
+                        color:
+                          i < reviewsData[activeIndex].rating
+                            ? "#fbbf24"
+                            : "#052f46",
+                      }}
                     />
                   ))}
                 </div>
 
-                <p className="text-gray-700">
+                <p className="font-medium" style={{ color: "#052f46" }}>
                   {reviewsData[activeIndex].review}
                 </p>
 
                 <div className="flex justify-between mt-6">
                   <button
                     onClick={prevReview}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                    className="p-2 rounded-full hover:bg-gray-200"
+                    style={{ backgroundColor: "rgba(5, 47, 70, 0.1)" }}
                     aria-label="Previous review"
                   >
-                    ←
+                    <span style={{ color: "#052f46" }}>←</span>
                   </button>
                   <div className="flex gap-1">
                     {reviewsData.map((_, idx) => (
                       <span
                         key={idx}
-                        className={`h-2 w-2 rounded-full ${idx === activeIndex ? "bg-[#2a8e9e]" : "bg-gray-300"}`}
+                        className="h-2 w-2 rounded-full"
+                        style={{
+                          backgroundColor:
+                            idx === activeIndex
+                              ? "#052f46"
+                              : "rgba(5, 47, 70, 0.3)",
+                        }}
                       />
                     ))}
                   </div>
                   <button
                     onClick={nextReview}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                    className="p-2 rounded-full hover:bg-gray-200"
+                    style={{ backgroundColor: "rgba(5, 47, 70, 0.1)" }}
                     aria-label="Next review"
                   >
-                    →
+                    <span style={{ color: "#052f46" }}>→</span>
                   </button>
                 </div>
               </CardContent>

@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 export default function AboutUsPage() {
   return (
     <div
-      className=" py-12 min-h-screen relative"
+      className="py-12 min-h-screen relative"
       style={{
         backgroundColor: "#003447",
         color: "#052f46",
@@ -252,13 +252,13 @@ export default function AboutUsPage() {
               key={index}
               className="p-6 flex items-center justify-center"
               style={{
-                backgroundColor: "rgba(227, 211, 160, 0.1)",
+                backgroundColor: "#052f46",
                 borderColor: "#052f46",
               }}
             >
               <p
                 className="text-center font-medium"
-                style={{ color: "#052f46" }}
+                style={{ color: "#f5e5be" }}
               >
                 {item}
               </p>

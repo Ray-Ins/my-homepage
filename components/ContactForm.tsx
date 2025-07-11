@@ -88,7 +88,13 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="p-6 shadow-md">
+    <Card
+      className="p-6 shadow-md"
+      style={{
+        backgroundColor: "rgba(227, 211, 160, 0.1)",
+        borderColor: "#052f46",
+      }}
+    >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
@@ -96,7 +102,9 @@ export default function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel style={{ color: "#052f46", fontWeight: "600" }}>
+                  Name
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your name"
@@ -114,7 +122,9 @@ export default function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel style={{ color: "#052f46", fontWeight: "600" }}>
+                  Email
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your email"
@@ -133,7 +143,9 @@ export default function ContactForm() {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone (Optional)</FormLabel>
+                <FormLabel style={{ color: "#052f46", fontWeight: "600" }}>
+                  Phone (Optional)
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your phone number"
@@ -151,7 +163,9 @@ export default function ContactForm() {
             name="organisation"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Organisation (Optional)</FormLabel>
+                <FormLabel style={{ color: "#052f46", fontWeight: "600" }}>
+                  Organisation (Optional)
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your organisation"
@@ -169,7 +183,9 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel style={{ color: "#052f46", fontWeight: "600" }}>
+                  Message
+                </FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="How can we help you?"
@@ -185,19 +201,29 @@ export default function ContactForm() {
 
           <Button
             type="submit"
-            className="mt-4 w-full h-[50px] bg-[#003447] hover:bg-[#003447]/90 hover:cursor-pointer"
+            className="mt-4 w-full h-[50px] hover:cursor-pointer"
             disabled={isLoading}
+            style={{
+              backgroundColor: "#052f46",
+              color: "#f5e5be",
+              borderColor: "#052f46",
+            }}
           >
             {isLoading ? "Sending..." : "Send Message"}
           </Button>
 
           {status.type && (
             <div
-              className={`mt-4 p-3 rounded ${
-                status.type === "success"
-                  ? "bg-green-50 text-green-800"
-                  : "bg-red-50 text-red-800"
-              }`}
+              className="mt-4 p-3 rounded"
+              style={{
+                backgroundColor:
+                  status.type === "success"
+                    ? "rgba(34, 197, 94, 0.1)"
+                    : "rgba(239, 68, 68, 0.1)",
+                color: status.type === "success" ? "#15803d" : "#dc2626",
+                borderColor: status.type === "success" ? "#15803d" : "#dc2626",
+                borderWidth: "1px",
+              }}
             >
               {status.message}
             </div>

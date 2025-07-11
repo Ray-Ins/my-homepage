@@ -35,17 +35,32 @@ export default function AccountingTaxationPage() {
   ];
 
   return (
-    <div className="container mx-auto py-12">
+    <div
+      className="py-12 min-h-screen relative"
+      style={{
+        backgroundColor: "#003447",
+        color: "#052f46",
+        backgroundImage: `url('/background/background.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       {/* Hero Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-16 container">
         <div className="space-y-6">
-          <Badge variant="outline" className="text-[#2a8e9e] px-4 py-1">
+          <Badge
+            variant="outline"
+            className="px-4 py-1 inline-flex"
+            style={{ color: "#052f46", borderColor: "#052f46" }}
+          >
             Accounting & Taxation
           </Badge>
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-4xl font-bold" style={{ color: "#052f46" }}>
             Tax Done Smarter. Strategy Done Right.
           </h1>
-          <p className="text-gray-600">
+          <p className="text-[#052f46]">
             We combine logic-driven analysis with decades of real-world
             experience to create practical, tailored solutions.
           </p>
@@ -66,29 +81,44 @@ export default function AccountingTaxationPage() {
       </div>
 
       {/* Services Section */}
-      <div className="max-w-6xl mx-auto my-16">
-        <h2 className="text-2xl font-bold mb-8 text-center">
+      <div className="max-w-6xl mx-auto my-16 container">
+        <h2
+          className="text-2xl font-bold mb-8 text-center"
+          style={{ color: "#052f46" }}
+        >
           Our Accounting & Taxation Services Include:
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="p-6 hover:shadow-lg transition-shadow"
+              style={{
+                backgroundColor: "#052f46",
+                borderColor: "#052f46",
+              }}
+            >
               <div className="flex flex-col h-full">
                 <div className="mb-4 flex items-center">
-                  <div className="w-12 h-12 bg-[#c5e2e6] rounded-full flex items-center justify-center mr-4">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center mr-2"
+                    style={{ backgroundColor: "rgba(245, 229, 190, 0.5)" }}
+                  >
                     <Image
                       src={service.icon}
                       alt={service.title}
-                      width={24}
-                      height={24}
+                      width={20}
+                      height={20}
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#003447]">
+                  <h3 className="font-semibold" style={{ color: "#f5e5be" }}>
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="font-sm" style={{ color: "#f5e5be" }}>
+                  {service.description}
+                </p>
               </div>
             </Card>
           ))}
@@ -96,9 +126,18 @@ export default function AccountingTaxationPage() {
       </div>
 
       {/* Who We Help Section */}
-      <div className="max-w-6xl mx-auto my-16 bg-[#003447] text-white p-12 rounded-lg">
-        <h2 className="text-2xl font-bold mb-6">Who We Help:</h2>
-        <p className="text-lg">
+      <div
+        className="max-w-6xl mx-auto my-16 p-12 rounded-lg"
+        style={{
+          backgroundColor: "rgba(5, 47, 70, 0.1)",
+          borderColor: "#052f46",
+          border: "1px solid #052f46",
+        }}
+      >
+        <h2 className="text-2xl font-bold mb-6" style={{ color: "#052f46" }}>
+          Who We Help:
+        </h2>
+        <p className="text-lg" style={{ color: "#052f46" }}>
           Small to medium businesses, professionals, and medical practitioners
           looking to optimise their tax position, improve financial clarity, and
           scale effectively.
@@ -106,7 +145,7 @@ export default function AccountingTaxationPage() {
       </div>
 
       {/* Approach Section */}
-      <div className="max-w-6xl mx-auto my-16">
+      <div className="max-w-6xl mx-auto my-16 container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-md">
             <Image
@@ -119,26 +158,40 @@ export default function AccountingTaxationPage() {
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold">Our Approach:</h2>
-            <p className="text-gray-600">
+            <h2 className="text-2xl font-bold" style={{ color: "#052f46" }}>
+              Our Approach:
+            </h2>
+            <p className="text-[#052f46]">
               We combine logic-driven analysis with decades of real-world
               experience to create practical, tailored solutions.
             </p>
             <div className="space-y-4">
               <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#2a8e9e] mr-2 flex-shrink-0" />
+                <CheckCircle
+                  className="h-6 w-6 mr-2 flex-shrink-0"
+                  style={{ color: "#052f46" }}
+                />
                 <p>Data-driven decision making with clear financial insights</p>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#2a8e9e] mr-2 flex-shrink-0" />
+                <CheckCircle
+                  className="h-6 w-6 mr-2 flex-shrink-0"
+                  style={{ color: "#052f46" }}
+                />
                 <p>Proactive tax planning to minimise liabilities</p>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#2a8e9e] mr-2 flex-shrink-0" />
+                <CheckCircle
+                  className="h-6 w-6 mr-2 flex-shrink-0"
+                  style={{ color: "#052f46" }}
+                />
                 <p>Industry-specific expertise for targeted solutions</p>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="h-6 w-6 text-[#2a8e9e] mr-2 flex-shrink-0" />
+                <CheckCircle
+                  className="h-6 w-6 mr-2 flex-shrink-0"
+                  style={{ color: "#052f46" }}
+                />
                 <p>Ongoing support and advisory beyond compliance</p>
               </div>
             </div>

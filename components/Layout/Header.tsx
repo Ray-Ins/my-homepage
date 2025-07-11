@@ -57,7 +57,9 @@ const Header = () => {
                   }}
                   className="hover:border-b-2 hover:border-[#f5e5be] focus:outline-none hover:bg-transparent focus:bg-transparent transition-all text-md font-montaga px-3 py-2"
                 >
-                  <Link href={link.href}>{link.label}</Link>
+                  <Link href={link.href} style={{ color: "#f5e5be" }}>
+                    {link.label}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}

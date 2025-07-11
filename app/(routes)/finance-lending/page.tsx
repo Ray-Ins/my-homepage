@@ -27,17 +27,32 @@ export default function FinanceLendingPage() {
   ];
 
   return (
-    <div className="container mx-auto py-12">
+    <div
+      className="py-12 min-h-screen relative"
+      style={{
+        backgroundColor: "#003447",
+        color: "#052f46",
+        backgroundImage: `url('/background/background.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       {/* Hero Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto mb-16 container">
         <div className="space-y-6">
-          <Badge variant="outline" className="text-[#2a8e9e] px-4 py-1">
+          <Badge
+            variant="outline"
+            className="px-4 py-1 inline-flex"
+            style={{ color: "#052f46", borderColor: "#052f46" }}
+          >
             Finance and Lending
           </Badge>
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-4xl font-bold" style={{ color: "#052f46" }}>
             Strategic Lending Solutions for Every Stage of Your Journey
           </h1>
-          <p className="text-gray-600">
+          <p className="text-[#052f46]">
             Ray and the lending team specialise in helping clients secure
             finance with clarity and confidence.
           </p>
@@ -58,8 +73,14 @@ export default function FinanceLendingPage() {
       </div>
 
       {/* Team Section */}
-      <div className="max-w-6xl mx-auto mb-16">
-        <Card className="p-6">
+      <div className="max-w-6xl mx-auto mb-16 container">
+        <Card
+          className="p-6"
+          style={{
+            backgroundColor: "rgba(227, 211, 160, 0.1)",
+            borderColor: "#052f46",
+          }}
+        >
           <div className="flex flex-col md:flex-row gap-6 items-center">
             <div className="w-32 h-32 relative flex-shrink-0">
               <Image
@@ -70,11 +91,16 @@ export default function FinanceLendingPage() {
               />
             </div>
             <CardContent className="p-0">
-              <h3 className="text-xl font-bold mb-1">Ray Jiang</h3>
-              <p className="text-[#2a8e9e] mb-3">
+              <h3
+                className="text-xl font-bold mb-1"
+                style={{ color: "#052f46" }}
+              >
+                Ray Jiang
+              </h3>
+              <p className="mb-3" style={{ color: "#052f46" }}>
                 Finance Broker & Property Expert
               </p>
-              <p className="text-gray-600">
+              <p style={{ color: "#052f46" }}>
                 Ray is a former ANZ banker with over a decade in the property
                 and finance industry. His never-give-up attitude and attention
                 to detail have helped countless clients secure residential and
@@ -87,17 +113,39 @@ export default function FinanceLendingPage() {
       </div>
 
       {/* Services Tabs Section */}
-      <div className="max-w-6xl mx-auto my-16">
-        <h2 className="text-2xl font-bold mb-8 text-center">
+      <div className="max-w-6xl mx-auto my-16 container">
+        <h2
+          className="text-2xl font-bold mb-8 text-center"
+          style={{ color: "#052f46" }}
+        >
           Our Lending Services
         </h2>
 
         <Tabs defaultValue="residential" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8 h-16">
-            <TabsTrigger value="residential" className="text-lg h-12">
+          <TabsList
+            className="grid w-full grid-cols-2 mb-8 h-16"
+            style={{
+              backgroundColor: "rgba(227, 211, 160, 0.1)",
+            }}
+          >
+            <TabsTrigger
+              value="residential"
+              className="text-lg h-12 data-[state=active]:!bg-[#052f46] data-[state=active]:!text-[#f5e5be]"
+              style={{
+                color: "#052f46",
+                borderColor: "#052f46",
+              }}
+            >
               Residential Lending
             </TabsTrigger>
-            <TabsTrigger value="commercial" className="text-lg h-12">
+            <TabsTrigger
+              value="commercial"
+              className="text-lg h-12 data-[state=active]:!bg-[#052f46] data-[state=active]:!text-[#f5e5be]"
+              style={{
+                color: "#052f46",
+                borderColor: "#052f46",
+              }}
+            >
               Commercial Lending
             </TabsTrigger>
           </TabsList>
@@ -108,12 +156,25 @@ export default function FinanceLendingPage() {
                 <Card
                   key={index}
                   className="p-6 hover:shadow-lg transition-shadow"
+                  style={{
+                    backgroundColor: "#052f46",
+                    borderColor: "#052f46",
+                  }}
                 >
                   <div className="flex items-center">
-                    <div className="w-10 h-10 bg-[#c5e2e6] rounded-full flex items-center justify-center mr-4 text-[#003447] font-bold">
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center mr-4 font-bold"
+                      style={{
+                        backgroundColor: "rgba(245, 229, 190, 0.2)",
+                        color: "#f5e5be",
+                      }}
+                    >
                       {index + 1}
                     </div>
-                    <h3 className="text-lg font-medium text-[#003447]">
+                    <h3
+                      className="text-lg font-medium"
+                      style={{ color: "#f5e5be" }}
+                    >
                       {service}
                     </h3>
                   </div>
@@ -128,12 +189,25 @@ export default function FinanceLendingPage() {
                 <Card
                   key={index}
                   className="p-6 hover:shadow-lg transition-shadow"
+                  style={{
+                    backgroundColor: "#052f46",
+                    borderColor: "#052f46",
+                  }}
                 >
                   <div className="flex items-center">
-                    <div className="w-10 h-10 bg-[#c5e2e6] rounded-full flex items-center justify-center mr-4 text-[#003447] font-bold">
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center mr-4 font-bold"
+                      style={{
+                        backgroundColor: "rgba(245, 229, 190, 0.2)",
+                        color: "#f5e5be",
+                      }}
+                    >
                       {index + 1}
                     </div>
-                    <h3 className="text-lg font-medium text-[#003447]">
+                    <h3
+                      className="text-lg font-medium"
+                      style={{ color: "#f5e5be" }}
+                    >
                       {service}
                     </h3>
                   </div>
@@ -145,19 +219,27 @@ export default function FinanceLendingPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="max-w-6xl mx-auto my-16 bg-[#003447] text-white p-12 rounded-lg">
+      <div
+        className="max-w-6xl mx-auto my-16 p-12 rounded-lg container"
+        style={{
+          backgroundColor: "rgba(5, 47, 70, 0.1)",
+          borderColor: "#052f46",
+          border: "1px solid #052f46",
+        }}
+      >
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: "#052f46" }}>
             Ready to discuss your lending needs?
           </h2>
-          <p className="text-lg mb-8">
+          <p className="text-lg mb-8" style={{ color: "#052f46" }}>
             Our team provides personalized lending solutions tailored to your
             unique situation. Let&apos;s find the right finance option for you.
           </p>
           <div className="flex justify-center">
             <a
               href="/event-register"
-              className="px-8 py-3 bg-white text-[#003447] font-medium rounded-md hover:bg-gray-100 transition-colors"
+              className="px-8 py-3 font-medium rounded-md hover:bg-gray-100 transition-colors"
+              style={{ backgroundColor: "#052f46", color: "#f5e5be" }}
             >
               Contact Us Today
             </a>
@@ -166,51 +248,99 @@ export default function FinanceLendingPage() {
       </div>
 
       {/* Process Section */}
-      <div className="max-w-6xl mx-auto my-16">
-        <h2 className="text-2xl font-bold mb-8 text-center">
+      <div className="max-w-6xl mx-auto my-16 container">
+        <h2
+          className="text-2xl font-bold mb-8 text-center"
+          style={{ color: "#052f46" }}
+        >
           Our Lending Process
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="p-6 hover:shadow-lg transition-shadow">
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow"
+            style={{
+              backgroundColor: "#052f46",
+              borderColor: "#052f46",
+            }}
+          >
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-[#c5e2e6] rounded-full flex items-center justify-center mb-4 text-[#003447] font-bold text-xl">
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mb-4 font-bold text-xl"
+                style={{
+                  backgroundColor: "rgba(245, 229, 190, 0.2)",
+                  color: "#f5e5be",
+                }}
+              >
                 1
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#003447]">
+              <h3
+                className="text-xl font-semibold mb-2"
+                style={{ color: "#f5e5be" }}
+              >
                 Consultation
               </h3>
-              <p className="text-gray-600">
+              <p className="font-medium" style={{ color: "#f5e5be" }}>
                 We start with understanding your goals, timeline, and financial
                 situation to identify the best lending options.
               </p>
             </div>
           </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-shadow">
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow"
+            style={{
+              backgroundColor: "#052f46",
+              borderColor: "#052f46",
+            }}
+          >
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-[#c5e2e6] rounded-full flex items-center justify-center mb-4 text-[#003447] font-bold text-xl">
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mb-4 font-bold text-xl"
+                style={{
+                  backgroundColor: "rgba(245, 229, 190, 0.2)",
+                  color: "#f5e5be",
+                }}
+              >
                 2
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#003447]">
+              <h3
+                className="text-xl font-semibold mb-2"
+                style={{ color: "#f5e5be" }}
+              >
                 Strategy
               </h3>
-              <p className="text-gray-600">
+              <p className="font-medium" style={{ color: "#f5e5be" }}>
                 We develop a tailored lending strategy and compare options
                 across our panel of lenders to find your ideal solution.
               </p>
             </div>
           </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-shadow">
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow"
+            style={{
+              backgroundColor: "#052f46",
+              borderColor: "#052f46",
+            }}
+          >
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-[#c5e2e6] rounded-full flex items-center justify-center mb-4 text-[#003447] font-bold text-xl">
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mb-4 font-bold text-xl"
+                style={{
+                  backgroundColor: "rgba(245, 229, 190, 0.2)",
+                  color: "#f5e5be",
+                }}
+              >
                 3
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#003447]">
+              <h3
+                className="text-xl font-semibold mb-2"
+                style={{ color: "#f5e5be" }}
+              >
                 Execution
               </h3>
-              <p className="text-gray-600">
+              <p className="font-medium" style={{ color: "#f5e5be" }}>
                 We handle the application process from start to settlement,
                 managing all paperwork and lender communications.
               </p>

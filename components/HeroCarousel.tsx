@@ -85,13 +85,13 @@ const HeroCarousel = () => {
                   className="object-cover"
                   priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white">
-                  <h2 className="text-3xl md:text-5xl font-montaga text-center px-4">
+                <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center">
+                  <h2
+                    className="text-3xl md:text-5xl font-montaga text-center px-4"
+                    style={{ color: "#f5e5be" }}
+                  >
                     {image.caption}
                   </h2>
-                  <button className="mt-6 bg-[#003447] hover:bg-[#003447]/90 transition-colors text-white px-6 py-2 rounded-md">
-                    Learn More
-                  </button>
                 </div>
               </div>
             </CarouselItem>
@@ -106,11 +106,11 @@ const HeroCarousel = () => {
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === current
-                  ? "bg-[#2a8e9e]"
-                  : "bg-white/70 hover:bg-white"
-              }`}
+              className="w-3 h-3 rounded-full transition-colors"
+              style={{
+                backgroundColor:
+                  index === current ? "#052f46" : "rgba(5, 47, 70, 0.5)",
+              }}
               onClick={() => scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
