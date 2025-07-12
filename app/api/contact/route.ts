@@ -55,7 +55,7 @@ export async function POST(request: Request) {
     try {
       const mailOptions = {
         from: `"Contact Form" <${process.env.NEXT_PUBLIC_APP_USER}>`,
-        to: process.env.NEXT_PUBLIC_APP_USER, // Send to your company email
+        to: "RayJ@inspirepartners.com.au", // Send to company email
         subject: `New Contact Message from ${name}`,
         text: `${name} from ${email} the question is: ${message}`,
         replyTo: email, // Allow easy reply to customer

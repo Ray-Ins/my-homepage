@@ -101,11 +101,12 @@ export default function FinanceLendingPage() {
                 Finance Broker & Property Expert
               </p>
               <p style={{ color: "#052f46" }}>
-                Ray is a former ANZ banker with over a decade in the property
-                and finance industry. His never-give-up attitude and attention
-                to detail have helped countless clients secure residential and
-                commercial finance solutions. Ray and his team work tirelessly
-                to find the right lending solution for your unique situation.
+                Ray is a former ANZ banker with over a decade of experience in
+                the property and finance industry. His never-give-up attitude
+                and attention to detail have helped countless clients secure
+                residential and commercial finance solutions. Ray and his team
+                work tirelessly to find the right lending solution for your
+                unique situation.
               </p>
             </CardContent>
           </div>
@@ -232,12 +233,12 @@ export default function FinanceLendingPage() {
             Ready to discuss your lending needs?
           </h2>
           <p className="text-lg mb-8" style={{ color: "#052f46" }}>
-            Our team provides personalized lending solutions tailored to your
+            Our team provides personalised lending solutions tailored to your
             unique situation. Let&apos;s find the right finance option for you.
           </p>
           <div className="flex justify-center">
             <a
-              href="/event-register"
+              href="/contact"
               className="px-8 py-3 font-medium rounded-md hover:bg-gray-100 transition-colors"
               style={{ backgroundColor: "#052f46", color: "#f5e5be" }}
             >
@@ -341,8 +342,9 @@ export default function FinanceLendingPage() {
                 Execution
               </h3>
               <p className="font-medium" style={{ color: "#f5e5be" }}>
-                We handle the application process from start to settlement,
-                managing all paperwork and lender communications.
+                From application to settlement, we handle every detail —
+                paperwork, lender communications, and everything in between — so
+                you can focus on what matters.
               </p>
             </div>
           </Card>

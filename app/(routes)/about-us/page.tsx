@@ -122,16 +122,16 @@ export default function AboutUsPage() {
           Meet Our Team
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* David Li Card */}
           <Card
-            className="p-6"
+            className="p-6 h-full"
             style={{
               backgroundColor: "rgba(227, 211, 160, 0.1)",
               borderColor: "#052f46",
             }}
           >
-            <div className="flex flex-col items-center text-center md:text-left md:flex-row gap-6">
+            <div className="flex flex-col items-center text-center md:text-left md:flex-row gap-6 h-full">
               <div className="w-32 h-32 relative flex-shrink-0">
                 <Image
                   src="/partners-avatars/David.jpg"
@@ -140,7 +140,7 @@ export default function AboutUsPage() {
                   className="rounded-full object-cover"
                 />
               </div>
-              <CardContent className="p-0">
+              <CardContent className="p-0 flex-1">
                 <h3
                   className="text-xl font-bold mb-1"
                   style={{ color: "#052f46" }}
@@ -165,13 +165,13 @@ export default function AboutUsPage() {
 
           {/* Ray Jiang Card */}
           <Card
-            className="p-6"
+            className="p-6 h-full"
             style={{
               backgroundColor: "rgba(227, 211, 160, 0.1)",
               borderColor: "#052f46",
             }}
           >
-            <div className="flex flex-col items-center text-center md:text-left md:flex-row gap-6">
+            <div className="flex flex-col items-center text-center md:text-left md:flex-row gap-6 h-full">
               <div className="w-32 h-32 relative flex-shrink-0">
                 <Image
                   src="/partners-avatars/Ray.jpg"
@@ -180,7 +180,7 @@ export default function AboutUsPage() {
                   className="rounded-full object-cover"
                 />
               </div>
-              <CardContent className="p-0">
+              <CardContent className="p-0 flex-1">
                 <h3
                   className="text-xl font-bold mb-1"
                   style={{ color: "#052f46" }}

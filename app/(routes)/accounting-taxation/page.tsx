@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 
@@ -80,6 +80,47 @@ export default function AccountingTaxationPage() {
         </div>
       </div>
 
+      {/* Team Section */}
+      <div className="max-w-6xl mx-auto mb-16 container">
+        <Card
+          className="p-6"
+          style={{
+            backgroundColor: "rgba(227, 211, 160, 0.1)",
+            borderColor: "#052f46",
+          }}
+        >
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            <div className="w-32 h-32 relative flex-shrink-0">
+              <Image
+                src="/partners-avatars/David.jpg"
+                alt="David Pham"
+                fill
+                className="rounded-full object-cover"
+              />
+            </div>
+            <CardContent className="p-0">
+              <h3
+                className="text-xl font-bold mb-1"
+                style={{ color: "#052f46" }}
+              >
+                David Li
+              </h3>
+              <p className="mb-3" style={{ color: "#052f46" }}>
+                CPA & Registered Tax Agent
+              </p>
+              <p style={{ color: "#052f46" }}>
+                With 15+ years of experience and an engineering background,
+                David brings a first-principles mindset to accounting. He
+                specialises in small to medium business tax, particularly in the
+                medical, hospitality, and IT sectors. Known for his logical
+                thinking and problem-solving skills, David is a passionate
+                advisor, family man, and seafood-loving basketball fan.
+              </p>
+            </CardContent>
+          </div>
+        </Card>
+      </div>
+
       {/* Services Section */}
       <div className="max-w-6xl mx-auto my-16 container">
         <h2
@@ -103,13 +144,20 @@ export default function AccountingTaxationPage() {
                 <div className="mb-4 flex items-center">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center mr-2"
-                    style={{ backgroundColor: "rgba(245, 229, 190, 0.5)" }}
+                    style={{
+                      backgroundColor: "rgba(245, 229, 190, 0.2)",
+                      color: "#f5e5be",
+                    }}
                   >
                     <Image
                       src={service.icon}
                       alt={service.title}
                       width={20}
                       height={20}
+                      style={{
+                        filter:
+                          "brightness(0) saturate(100%) invert(94%) sepia(38%) saturate(324%) hue-rotate(346deg) brightness(104%) contrast(98%)",
+                      }}
                     />
                   </div>
                   <h3 className="font-semibold" style={{ color: "#f5e5be" }}>

@@ -75,8 +75,12 @@ const AboutSection = () => {
             <div className="flex flex-wrap gap-4">
               <Link href="/accounting-taxation">
                 <button
-                  className="px-6 py-3 rounded-md hover:bg-gray-100 transition-colors font-medium cursor-pointer"
-                  style={{ backgroundColor: "#052f46", color: "#f5e5be" }}
+                  className="px-6 py-3 border rounded-md hover:bg-gray-100 transition-colors font-medium cursor-pointer"
+                  style={{
+                    backgroundColor: "#052f46",
+                    color: "#f5e5be",
+                    borderColor: "#052f46",
+                  }}
                 >
                   Our Services
                 </button>

@@ -65,8 +65,8 @@ export default function CustomerReviews() {
           className="text-center mb-12 max-w-2xl mx-auto font-medium"
           style={{ color: "#052f46" }}
         >
-          Don&apos;t just take our word for it. Here&apos;s what participants
-          have to say about our events.
+          Our results speak for themselves. Here&apos;s what our clients have to
+          say.
         </p>
 
         <div className="flex flex-wrap justify-center gap-6 font-montaga">

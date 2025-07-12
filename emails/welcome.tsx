@@ -21,59 +21,37 @@ interface WelcomeEmailProps {
   eventTitle?: string;
   eventDescription?: string;
   eventLocation?: string;
-  eventStartTime?: string; // ISO format
-  eventEndTime?: string; // ISO format
+  eventDate?: string; // Date in YYYY-MM-DD format
+  eventStartTime?: string; // Time in HH:MM format
+  eventEndTime?: string; // Time in HH:MM format
   zoomLink?: string; // Zoom meeting link
   organizerEmail?: string; // Email of the event organizer/admin
   webinarImageCid?: string; // Content ID for attached webinar image
   logoCid?: string; // Content ID for attached logo
 }
 
-// Helper function to safely parse dates
-const safeParseDate = (dateString: string) => {
+// Helper function to format date from YYYY-MM-DD to readable format
+const formatDate = (dateString: string) => {
   try {
-    const date = new Date(dateString);
-    // Check if date is valid
-    if (isNaN(date.getTime())) {
-      return new Date(); // Return current date as fallback
-    }
-    return date;
-  } catch (err) {
-    return new Date(); // Return current date as fallback
-  }
-};
-
-// Helper function to format date and time correctly
-const formatEventDateTime = (eventStartTime: string) => {
-  try {
-    // Parse the ISO string directly without timezone conversion
-    const isoString = eventStartTime;
-
-    // Extract date and time components directly from the ISO string
-    // Format: "2025-07-30T20:30:00.000Z"
-    const [datePart, timePart] = isoString.split("T");
-
-    if (!datePart || !timePart) {
-      throw new Error("Invalid ISO string format");
-    }
-
-    // Parse date components
-    const [year, month, day] = datePart.split("-").map(Number);
-
-    // Parse time components (remove Z and any milliseconds)
-    const timeOnly = timePart.replace("Z", "").split(".")[0]; // "20:30:00"
-    const [hours, minutes] = timeOnly.split(":").map(Number);
-
-    // Format date
+    const [year, month, day] = dateString.split("-").map(Number);
     const dateObj = new Date(year, month - 1, day); // month is 0-indexed
-    const eventDate = dateObj.toLocaleDateString("en-US", {
+    return dateObj.toLocaleDateString("en-US", {
       weekday: "long",
       year: "numeric",
       month: "long",
       day: "numeric",
     });
+  } catch (err) {
+    return "Date to be announced";
+  }
+};
 
-    // Format time - convert 24h to 12h format
+// Helper function to format time from HH:MM to 12-hour format
+const formatTime = (timeString: string) => {
+  try {
+    const [hours, minutes] = timeString.split(":").map(Number);
+
+    // Convert 24h to 12h format
     let displayHours = hours;
     const ampm = hours >= 12 ? "PM" : "AM";
 
@@ -83,20 +61,9 @@ const formatEventDateTime = (eventStartTime: string) => {
       displayHours = hours - 12; // 13:xx becomes 1:xx PM
     }
 
-    const eventTime = `${displayHours}:${minutes.toString().padStart(2, "0")} ${ampm}`;
-
-    return { eventDate, eventTime };
+    return `${displayHours}:${minutes.toString().padStart(2, "0")} ${ampm}`;
   } catch (err) {
-    console.error(
-      "Error formatting event date/time:",
-      err,
-      "Input:",
-      eventStartTime
-    );
-    return {
-      eventDate: "Date to be announced",
-      eventTime: "Time to be announced",
-    };
+    return "Time to be announced";
   }
 };
 
@@ -106,6 +73,7 @@ export default function WelcomeEmail({
   eventTitle,
   eventDescription,
   eventLocation,
+  eventDate,
   eventStartTime,
   eventEndTime,
   zoomLink,
@@ -114,17 +82,15 @@ export default function WelcomeEmail({
   logoCid,
 }: WelcomeEmailProps) {
   // Check if we have event details
-  const hasEventDetails = eventStartTime && eventEndTime && eventTitle;
+  const hasEventDetails = eventDate && eventStartTime && eventTitle;
 
   // Format event date and time for display
-  let eventDate = "";
-  let eventTime = "";
+  let formattedDate = "";
+  let formattedTime = "";
 
   if (hasEventDetails) {
-    const { eventDate: formattedDate, eventTime: formattedTime } =
-      formatEventDateTime(eventStartTime!);
-    eventDate = formattedDate;
-    eventTime = formattedTime;
+    formattedDate = formatDate(eventDate!);
+    formattedTime = formatTime(eventStartTime!);
   }
 
   return (
@@ -167,10 +133,10 @@ export default function WelcomeEmail({
                   </Heading>
 
                   <Text className="text-gray-600 text-base leading-6 mb-2">
-                    <strong>Date:</strong> {eventDate}
+                    <strong>Date:</strong> {formattedDate}
                   </Text>
                   <Text className="text-gray-600 text-base leading-6 mb-2">
-                    <strong>Time:</strong> {eventTime}
+                    <strong>Time:</strong> {formattedTime}
                   </Text>
                   <Text className="text-gray-600 text-base leading-6 mb-2">
                     <strong>Location:</strong> {eventLocation || "Online"}

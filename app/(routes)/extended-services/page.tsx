@@ -21,7 +21,7 @@ export default function ExtendedServicePage() {
       title: "Property Advisory",
       icon: <Home className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
-        "We partner with experienced third-party property advisors who bring deep knowledge of the Australian property market. Whether you're a first-time buyer, upgrader, or investor, our affiliate experts help you navigate the complex property landscape with confidence — from market analysis and property selection to negotiation and settlement.",
+        "We partner with experienced third-party property advisors who bring deep knowledge of the Australian property market. Whether you're a first-time buyer, upgrader, or investor, our specialist experts help you navigate the complex property landscape with confidence — from market analysis and property selection to negotiation and settlement.",
       tagline:
         "We connect you to the right professionals so you can make informed, strategic property decisions.",
       image: "/denise-jans--gmtAa0Q5MI-unsplash.jpg",
@@ -30,7 +30,7 @@ export default function ExtendedServicePage() {
       title: "Financial Planning",
       icon: <LineChart className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
-        "Through our trusted financial planning partners, we offer clients access to holistic advice tailored to every stage of life. Whether you're building wealth, protecting your family, or planning for the future, our affiliate advisors can assist with:",
+        "Through our trusted financial planning partners, we offer clients access to holistic advice tailored to every stage of life. Whether you're building wealth, protecting your family, or planning for the future, our specialist advisors can assist with:",
       tagline:
         "We connect you with licensed professionals who share our values of integrity, transparency, and long-term partnership.",
       image: "/microsoft-edge-4QKqDeAZf-c-unsplash.jpg",
@@ -150,7 +150,7 @@ export default function ExtendedServicePage() {
         }}
       >
         <h2 className="text-2xl font-bold mb-6" style={{ color: "#052f46" }}>
-          Ready to connect with our affiliate partners?
+          Ready to connect with our trusted partners?
         </h2>
         <p className="max-w-2xl mx-auto mb-8" style={{ color: "#052f46" }}>
           Our network of trusted professionals is ready to help you achieve your
@@ -161,7 +161,7 @@ export default function ExtendedServicePage() {
           className="px-8 py-3 font-medium rounded-md hover:bg-gray-100 transition-colors inline-block"
           style={{ backgroundColor: "#052f46", color: "#f5e5be" }}
         >
-          Get in Touch
+          Contact Us Today
         </a>
       </div>
     </div>

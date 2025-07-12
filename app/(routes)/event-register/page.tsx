@@ -254,12 +254,12 @@ export default function EventRegistrationPage() {
                     Finance Broker & Property Expert
                   </p>
                   <p className="font-medium" style={{ color: "#052f46" }}>
-                    Ray is a former ANZ banker with over a decade in the
-                    property and finance industry. His never-give-up attitude
-                    and attention to detail have helped countless clients secure
-                    residential and commercial finance solutions. A devoted
-                    family man, Ray loves reading, travelling, and playing
-                    basketball.
+                    Ray is a former ANZ banker with over a decade of experience
+                    in the property and finance industry. His never-give-up
+                    attitude and attention to detail have helped countless
+                    clients secure residential and commercial finance solutions.
+                    A devoted family man, Ray loves reading, travelling, and
+                    playing basketball.
                   </p>
                 </div>
               </div>
