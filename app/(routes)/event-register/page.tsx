@@ -170,7 +170,7 @@ export default function EventRegistrationPage() {
 
           <p>
             About Inspire Partners Founded by David Li (CPA & Tax Agent) and Ray
-            (Finance Broker), Inspire Partners provides strategic tax,
+            Jiang (Finance Broker), Inspire Partners provides strategic tax,
             accounting, and lending advice tailored to Australia’s healthcare
             professionals. With deep experience in the healthcare sector, we
             help clients protect their income, structure wisely, and build

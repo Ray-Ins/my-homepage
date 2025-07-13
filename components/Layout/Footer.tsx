@@ -48,8 +48,8 @@ const Footer = () => {
               <Image
                 src="/Logo.png"
                 alt="Inspire Partners Logo"
-                width={150}
-                height={50}
+                width={200}
+                height={200}
               />
             </Link>
             <p className="mt-4" style={{ color: "#f5e5be" }}>

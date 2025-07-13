@@ -78,15 +78,14 @@ export default function AboutUsPage() {
               Our Vision
             </h2>
             <p className="max-w-4xl mx-auto" style={{ color: "#052f46" }}>
-              At Inspire Partners, we see life as a journey — one where every
-              decision shapes your future. Like the Tree of Life, we&apos;re
-              deeply rooted in relationships, growing stronger through shared
-              learning, trust, and care. We are inspired by the people we work
-              with — our clients, business partners, and community — and
-              we&apos;re here to guide and empower them to achieve financial
-              freedom and peace of mind. Together, we share, learn, and grow —
-              because it&apos;s not just about the destination, it&apos;s about
-              the journey.
+              At Inspire Partners, we see life as a journey — where every
+              decision shapes the future. Like the Tree of Life, we are deeply
+              rooted in relationships, growing stronger through trust, shared
+              learning, and care. Inspired by the people we work with — our
+              clients, business partners, and community — we guide and empower
+              them to achieve financial freedom and peace of mind. Together, we
+              share, learn, and grow, because success isn&apos;t just about the
+              destination — it&apos;s about the journey we take together.
             </p>
           </div>
 
@@ -102,12 +101,13 @@ export default function AboutUsPage() {
             </h2>
             <p className="max-w-4xl mx-auto" style={{ color: "#052f46" }}>
               At Inspire Partners, our mission is to empower Australians to grow
-              and thrive financially through every stage of life. We provide
-              tailored taxation, lending, and financial solutions with a human
-              touch — nurturing partnerships built on trust, care, and shared
-              success. Together, we help individuals, families, and businesses
-              navigate their journeys, learn along the way, and create a future
-              they can be proud of.
+              and thrive financially at every stage of life. We deliver holistic
+              taxation, lending, and financial solutions with a human touch —
+              nurturing long-term relationships built on trust, care, and shared
+              success. Our goal is to guide high-income earners on their journey
+              to becoming high-net-worth individuals, helping clients grow —
+              personally and professionally — and create a future they can be
+              proud of.
             </p>
           </div>
         </div>
@@ -191,11 +191,11 @@ export default function AboutUsPage() {
                   Finance Broker & Property Expert
                 </p>
                 <p style={{ color: "#052f46" }}>
-                  Ray is a former ANZ banker with over a decade in the property
-                  and finance industry. His never-give-up attitude and attention
-                  to detail have helped countless clients secure residential and
-                  commercial finance solutions. A devoted family man, Ray loves
-                  reading, travelling, and playing basketball.
+                  Ray is a former ANZ banker with over a decade of experience in
+                  the property and finance industry. His never-give-up attitude
+                  and attention to detail have helped countless clients secure
+                  residential and commercial finance solutions. A devoted family
+                  man, Ray loves reading, travelling, and playing basketball.
                 </p>
               </CardContent>
             </div>
@@ -204,7 +204,7 @@ export default function AboutUsPage() {
       </div>
 
       {/* Vision Section */}
-      <div
+      {/* <div
         className="max-w-6xl mx-auto mb-16 p-12 rounded-lg"
         style={{
           backgroundColor: "rgba(227, 211, 160, 0.1)",
@@ -226,7 +226,7 @@ export default function AboutUsPage() {
           individuals, and help our clients grow — personally and
           professionally.
         </p>
-      </div>
+      </div> */}
 
       {/* Why Choose Us Section */}
       <div className="max-w-6xl mx-auto">

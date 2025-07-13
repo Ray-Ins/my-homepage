@@ -8,6 +8,7 @@ import { eq, and } from "drizzle-orm";
 import { generateIcsFile } from "@/lib/ics-generator";
 import fs from "fs";
 import path from "path";
+import { fromZonedTime } from "date-fns-tz";
 
 // Create Gmail transporter
 const transporter = nodemailer.createTransport({
@@ -98,9 +99,12 @@ export async function POST(request: NextRequest) {
     const startTime = eventDetails.startTime; // Already in HH:MM format
     const endTime = eventDetails.endTime; // Already in HH:MM format
 
-    // Create start and end datetime for ICS
-    const startDateTime = new Date(`${eventDate}T${startTime}:00`);
-    const endDateTime = new Date(`${eventDate}T${endTime}:00`);
+    // Australian Eastern timezone (handles both AEST and AEDT automatically)
+    const timezone = "Australia/Sydney";
+
+    // Create start and end datetime in Australian Eastern timezone
+    const startDateTime = fromZonedTime(`${eventDate} ${startTime}`, timezone);
+    const endDateTime = fromZonedTime(`${eventDate} ${endTime}`, timezone);
 
     // Prepare email template props
     const emailProps = {
@@ -122,8 +126,7 @@ export async function POST(request: NextRequest) {
     // Generate ICS file content
     const icsContent = await generateIcsFile({
       title: emailProps.eventTitle,
-      description:
-        emailProps.eventDescription || `Welcome onboarding for ${name}`,
+      description: emailProps.eventDescription,
       location: emailProps.eventLocation,
       start: startDateTime.toISOString(),
       end: endDateTime.toISOString(),
