@@ -168,13 +168,15 @@ export default function EventRegistrationPage() {
             </li>
           </ul>
 
+          <h2 className="text-2xl font-bold mb-4" style={{ color: "#052f46" }}>
+            About Inspire Partners
+          </h2>
           <p>
-            About Inspire Partners Founded by David Li (CPA & Tax Agent) and Ray
-            Jiang (Finance Broker), Inspire Partners provides strategic tax,
-            accounting, and lending advice tailored to Australia’s healthcare
-            professionals. With deep experience in the healthcare sector, we
-            help clients protect their income, structure wisely, and build
-            lasting wealth.
+            Founded by David Li (CPA & Tax Agent) and Ray Jiang (Finance
+            Broker), Inspire Partners provides strategic tax, accounting, and
+            lending advice tailored to Australia’s healthcare professionals.
+            With deep experience in the healthcare sector, we help clients
+            protect their income, structure wisely, and build lasting wealth.
           </p>
 
           {/* Speakers Introduction */}
