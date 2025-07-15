@@ -146,12 +146,11 @@ export default function EventRegistrationPage() {
                 When and how to restructure as your career or practice evolves
               </li>
             </ul>
-            <p>
-              Whether you&apos;re starting your journey or re-evaluating your
-              setup, this session is a must-attend for doctors, dentists, and or
-              practice evolves Whether you&apos;re starting your journey or
-              re-evaluating your setup, this session is a must-attend for
-              doctors, dentists, and clinic owners alike.
+            <p className="mt-4">
+              For doctors, dentists, and clinic owners — whether you&apos;re at
+              the start of your journey or refining your setup for the next
+              stage, this exclusive webinar will equip you with insights to grow
+              with confidence.
             </p>
           </div>
 
