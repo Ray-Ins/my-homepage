@@ -15,7 +15,7 @@ export default function ExtendedServicePage() {
         "Through our trusted investment partners, we provide access to high-quality property, equity, and debt investment opportunities for high-net-worth (HNW) individuals — opportunities typically reserved for investment banks and family offices. These curated offerings are sourced and managed by third-party experts, with a focus on strong fundamentals, risk-adjusted returns, and transparency.",
       tagline:
         "We connect you to institutional-grade opportunities aligned with your financial goals.",
-      image: "/scott-graham-OQMZwNd3ThU-unsplash.jpg",
+      image: "/extended-services-1.webp",
     },
     {
       title: "Property Advisory",
@@ -24,7 +24,7 @@ export default function ExtendedServicePage() {
         "We partner with experienced third-party property advisors who bring deep knowledge of the Australian property market. Whether you're a first-time buyer, upgrader, or investor, our specialist experts help you navigate the complex property landscape with confidence — from market analysis and property selection to negotiation and settlement.",
       tagline:
         "We connect you to the right professionals so you can make informed, strategic property decisions.",
-      image: "/denise-jans--gmtAa0Q5MI-unsplash.jpg",
+      image: "/extended-services-2.webp",
     },
     {
       title: "Financial Planning",
@@ -33,7 +33,7 @@ export default function ExtendedServicePage() {
         "Through our trusted financial planning partners, we offer clients access to holistic advice tailored to every stage of life. Whether you're building wealth, protecting your family, or planning for the future, our specialist advisors can assist with:",
       tagline:
         "We connect you with licensed professionals who share our values of integrity, transparency, and long-term partnership.",
-      image: "/microsoft-edge-4QKqDeAZf-c-unsplash.jpg",
+      image: "/extended-services-3.webp",
       bulletPoints: [
         "Investment Strategy – Structuring portfolios aligned with your goals and risk profile",
         "Retirement Planning – Ensuring financial confidence and lifestyle readiness for life after work",

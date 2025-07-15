@@ -61,7 +61,7 @@ export default function FinanceLendingPage() {
         <div className="w-full h-full relative">
           <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-md">
             <Image
-              src="/michael-lee-PUwNVrP7BLQ-unsplash.jpg"
+              src="/finance-lending.webp"
               alt="Finance and Lending"
               fill
               style={{ objectFit: "cover" }}

@@ -60,7 +60,7 @@ export default function EventRegistrationPage() {
         <div className="w-full h-full relative">
           <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-md">
             <Image
-              src="/event-register.jpg"
+              src="/event-register.webp"
               alt="Event Registration"
               fill
               style={{ objectFit: "cover" }}

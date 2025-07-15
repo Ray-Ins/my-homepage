@@ -12,28 +12,28 @@ export default function SpecialisedIndustriesPage() {
       icon: <Building2 className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
         "GPs, dentists, clinics, surgeons — we manage your tax and structure your finances for long-term growth.",
-      image: "/jason-goodman-Oalh2MojUuk-unsplash.jpg",
+      image: "/specialised-industries-1.webp",
     },
     {
       title: "Hospitality",
       icon: <Utensils className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
         "From cafes to restaurants and venues, we help you navigate seasonal cashflow, payroll, and asset finance.",
-      image: "/hendo-wang-GUDObDUsI6E-unsplash.jpg",
+      image: "/specialised-industries-2.webp",
     },
     {
       title: "Construction & Property",
       icon: <HardHat className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
         "From builders to developers, we manage project-based cashflow, structure loans, and reduce risk.",
-      image: "/redd-francisco-PTRzqc_h1r4-unsplash.jpg",
+      image: "/specialised-industries-3.webp",
     },
     {
       title: "Real Estate & Agencies",
       icon: <Home className="h-10 w-10" style={{ color: "#052f46" }} />,
       description:
         "Commission structuring, contractor compliance, business lending — we've got it covered.",
-      image: "/weyne-yew-PCbpcMAY_ew-unsplash.jpg",
+      image: "/specialised-industries-4.webp",
     },
   ];
 
@@ -175,7 +175,7 @@ export default function SpecialisedIndustriesPage() {
           </div>
           <div className="relative h-[300px] rounded-lg overflow-hidden">
             <Image
-              src="/krakenimages-376KN_ISplE-unsplash.jpg"
+              src="/specialised-industries-5.webp"
               alt="Professional meeting"
               fill
               className="object-cover"

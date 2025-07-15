@@ -70,7 +70,6 @@ export async function POST(request: Request) {
         id: insertedMessage[0].id,
       });
     } catch (emailError) {
-      console.error("Failed to send email notification:", emailError);
       // Message was saved but email failed - still return success
       return NextResponse.json({
         success: true,
@@ -79,7 +78,6 @@ export async function POST(request: Request) {
       });
     }
   } catch (error) {
-    console.error("Error processing contact form submission:", error);
     return NextResponse.json(
       { error: "Failed to process your request" },
       { status: 500 }

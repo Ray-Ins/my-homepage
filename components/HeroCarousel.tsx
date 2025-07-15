@@ -19,22 +19,22 @@ const HeroCarousel = () => {
   // Images for the carousel
   const carouselImages = [
     {
-      src: "/annie-spratt-hCb3lIB8L8E-unsplash.jpg",
+      src: "/hero-carousel-1.webp",
       alt: "Business meeting",
       caption: "Strategic Business Solutions",
     },
     {
-      src: "/michael-lee-PUwNVrP7BLQ-unsplash.jpg",
+      src: "/hero-carousel-2.webp",
       alt: "Modern office",
       caption: "Professional Financial Services",
     },
     {
-      src: "/scott-graham-5fNmWej4tAA-unsplash.jpg",
+      src: "/hero-carousel-3.webp",
       alt: "Financial planning",
       caption: "Expert Tax Consultation",
     },
     {
-      src: "/blake-wisz-GFrBMipOd_E-unsplash.jpg",
+      src: "/hero-carousel-4.webp",
       alt: "Corporate building",
       caption: "Industry-Leading Expertise",
     },

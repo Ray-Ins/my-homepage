@@ -69,7 +69,7 @@ export default function AccountingTaxationPage() {
         <div className="w-full h-full relative">
           <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-md">
             <Image
-              src="/scott-graham-5fNmWej4tAA-unsplash.jpg"
+              src="/accounting-taxation-1.webp"
               alt="Accounting Services"
               fill
               style={{ objectFit: "cover" }}
@@ -197,7 +197,7 @@ export default function AccountingTaxationPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-md">
             <Image
-              src="/scott-graham-OQMZwNd3ThU-unsplash.jpg"
+              src="/accounting-taxation-2.webp"
               alt="Our Approach"
               fill
               style={{ objectFit: "cover" }}
