@@ -80,18 +80,18 @@ export default function ContactSection() {
                 </h4>
                 <div className="flex flex-col space-y-1">
                   <a
-                    href="mailto:RayJ@inspirepartners.com.au"
+                    href="mailto:RayJ@inspartners.com.au"
                     className="hover:underline"
                     style={{ color: "#052f46" }}
                   >
-                    RayJ@inspirepartners.com.au
+                    RayJ@inspartners.com.au
                   </a>
                   <a
-                    href="mailto:DavidL@inspirepartners.com.au"
+                    href="mailto:DavidL@inspartners.com.au"
                     className="hover:underline"
                     style={{ color: "#052f46" }}
                   >
-                    DavidL@inspirepartners.com.au
+                    DavidL@inspartners.com.au
                   </a>
                 </div>
               </div>
