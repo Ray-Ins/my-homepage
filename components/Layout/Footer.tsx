@@ -171,18 +171,18 @@ const Footer = () => {
                 />
                 <div className="flex flex-col space-y-1">
                   <a
-                    href="mailto:RayJ@inspirepartners.com.au"
+                    href="mailto:RayJ@inspartners.com.au"
                     className="hover:text-[#c5e2e6] transition-colors"
                     style={{ color: "#f5e5be" }}
                   >
-                    RayJ@inspirepartners.com.au
+                    RayJ@inspartners.com.au
                   </a>
                   <a
-                    href="mailto:DavidL@inspirepartners.com.au"
+                    href="mailto:DavidL@inspartners.com.au"
                     className="hover:text-[#c5e2e6] transition-colors"
                     style={{ color: "#f5e5be" }}
                   >
-                    DavidL@inspirepartners.com.au
+                    DavidL@inspartners.com.au
                   </a>
                 </div>
               </li>
