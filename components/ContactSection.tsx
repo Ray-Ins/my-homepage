@@ -83,6 +83,7 @@ export default function ContactSection() {
                     href="mailto:RayJ@inspartners.com.au"
                     className="hover:underline"
                     style={{ color: "#052f46" }}
+                    aria-label="Send email to Ray Jiang at RayJ@inspartners.com.au"
                   >
                     RayJ@inspartners.com.au
                   </a>
@@ -90,6 +91,7 @@ export default function ContactSection() {
                     href="mailto:DavidL@inspartners.com.au"
                     className="hover:underline"
                     style={{ color: "#052f46" }}
+                    aria-label="Send email to David Li at DavidL@inspartners.com.au"
                   >
                     DavidL@inspartners.com.au
                   </a>
@@ -116,6 +118,7 @@ export default function ContactSection() {
                     href="tel:+61449588614"
                     className="hover:underline"
                     style={{ color: "#052f46" }}
+                    aria-label="Call Ray Jiang at 04 4958 8614"
                   >
                     04 4958 8614 Ray
                   </a>
@@ -123,6 +126,7 @@ export default function ContactSection() {
                     href="tel:+61466098666"
                     className="hover:underline"
                     style={{ color: "#052f46" }}
+                    aria-label="Call David Li at 04 6609 8666"
                   >
                     04 6609 8666 David
                   </a>
@@ -140,6 +144,8 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Inspire Partners Office Location - L1/534 Whitehorse Road, Mitcham, VIC 3132"
+                aria-label="Interactive map showing Inspire Partners office location at L1/534 Whitehorse Road, Mitcham, VIC 3132"
               ></iframe>
             </div>
           </div>

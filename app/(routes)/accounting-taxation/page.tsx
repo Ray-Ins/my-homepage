@@ -1,9 +1,49 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Accounting & Taxation Services - Inspire Partners Melbourne",
+  description:
+    "Expert accounting and taxation services for small to medium businesses. Tax compliance, bookkeeping, SMSF management, due diligence, and strategic tax planning by experienced CPA David Li.",
+  keywords: [
+    "accounting services Melbourne",
+    "tax agent Melbourne",
+    "business tax compliance",
+    "bookkeeping services",
+    "SMSF accounting",
+    "due diligence services",
+    "business valuation",
+    "tax planning",
+    "BAS preparation",
+    "medical practice accounting",
+    "hospitality accounting",
+    "IT business tax",
+    "cashflow management",
+  ],
+  openGraph: {
+    title: "Accounting & Taxation Services - Expert Business Advisory",
+    description:
+      "Professional accounting and tax services for businesses. Tax compliance, bookkeeping, SMSF, and strategic planning by CPA David Li.",
+    type: "website",
+    images: [
+      {
+        url: "/accounting-taxation-1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Accounting and Taxation Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Expert Accounting & Taxation Services",
+    description:
+      "Professional tax compliance, bookkeeping, and business advisory services.",
+  },
+};
 
 export default function AccountingTaxationPage() {
   const services = [

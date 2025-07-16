@@ -1,9 +1,46 @@
-"use client";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "About Us - Inspire Partners | Meet Our Financial Advisory Team",
+  description:
+    "Learn about Inspire Partners' founding story, mission, and meet our expert team. David Li (CPA) and Ray Jiang combine 25+ years of experience in accounting, taxation, and lending to deliver comprehensive financial solutions.",
+  keywords: [
+    "about Inspire Partners",
+    "David Li CPA",
+    "Ray Jiang finance broker",
+    "financial advisory team Melbourne",
+    "accounting tax team",
+    "business financial advisors",
+    "medical practice advisors",
+    "our story",
+    "company mission",
+    "financial expertise",
+  ],
+  openGraph: {
+    title: "About Us - Inspire Partners Financial Advisory Team",
+    description:
+      "Meet the expert team behind Inspire Partners. David Li (CPA) and Ray Jiang combine decades of experience in financial advisory services.",
+    type: "website",
+    images: [
+      {
+        url: "/partners-avatars/David.jpg",
+        width: 400,
+        height: 400,
+        alt: "David Li - CPA & Registered Tax Agent",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Inspire Partners - Expert Financial Advisory Team",
+    description:
+      "Meet David Li (CPA) and Ray Jiang - combining 25+ years of financial expertise.",
+  },
+};
 
 export default function AboutUsPage() {
   return (

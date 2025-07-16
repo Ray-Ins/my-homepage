@@ -1,9 +1,51 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Building2, Utensils, HardHat, Home } from "lucide-react";
+
+export const metadata: Metadata = {
+  title:
+    "Specialised Industries - Medical, Hospitality & Construction Finance | Inspire Partners",
+  description:
+    "Tailored financial solutions for medical professionals, hospitality businesses, construction companies, and real estate agencies. Industry-specific expertise in tax, lending, and business advisory.",
+  keywords: [
+    "medical practice finance",
+    "GP practice accounting",
+    "dental practice loans",
+    "hospitality business finance",
+    "restaurant accounting",
+    "cafe business loans",
+    "construction finance",
+    "builder business loans",
+    "property developer finance",
+    "real estate agency finance",
+    "medical practice loans",
+    "healthcare finance",
+    "industry specific accounting",
+    "specialist business advisors",
+  ],
+  openGraph: {
+    title: "Specialised Industry Financial Solutions",
+    description:
+      "Expert financial services for medical, hospitality, construction, and real estate industries with tailored solutions.",
+    type: "website",
+    images: [
+      {
+        url: "/specialised-industries-1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Specialised Industry Financial Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Industry-Specific Financial Solutions",
+    description:
+      "Tailored finance and accounting for medical, hospitality, construction & real estate.",
+  },
+};
 
 export default function SpecialisedIndustriesPage() {
   const industries = [

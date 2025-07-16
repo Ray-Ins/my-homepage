@@ -35,8 +35,8 @@ const Header = () => {
     <header className="w-full border-b bg-[#052f46] sticky top-0 z-50">
       <div className="px-4 md:px-0 md:container mx-auto flex items-center justify-between py-4">
         {/* Logo on the left */}
-        <Link href="/" className="flex items-center">
-          <Image src="/Logo.png" alt="Company Logo" width={150} height={50} />
+        <Link href="/" className="flex items-center" aria-label="Go to Inspire Partners homepage">
+          <Image src="/Logo.png" alt="Inspire Partners Logo" width={150} height={50} />
         </Link>
 
         {/* Navigation on the right */}

@@ -1,8 +1,37 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/ContactForm";
 import { MapPin, Mail, Phone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact Us - Inspire Partners | Get Expert Financial Advice",
+  description:
+    "Contact Inspire Partners for expert financial advisory services. Located in Mitcham, VIC. Call 04 4958 8614 (Ray) or 04 6609 8666 (David) for accounting, taxation, and lending solutions.",
+  keywords: [
+    "contact Inspire Partners",
+    "financial advisor contact Melbourne",
+    "accounting firm contact",
+    "tax agent contact",
+    "mortgage broker contact",
+    "Mitcham financial services",
+    "business advisor contact",
+    "Ray Jiang contact",
+    "David Li contact",
+    "financial consultation",
+  ],
+  openGraph: {
+    title: "Contact Inspire Partners - Expert Financial Advisory",
+    description:
+      "Get in touch with our expert team for accounting, taxation, and lending solutions. Located in Mitcham, VIC.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact Inspire Partners - Financial Advisory",
+    description:
+      "Expert accounting, taxation, and lending solutions in Melbourne.",
+  },
+};
 
 export default function ContactPage() {
   return (
@@ -37,7 +66,7 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Info and Form Section */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 container">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto container">
         {/* Contact Information */}
         <div className="space-y-8">
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#052f46" }}>
@@ -83,6 +112,7 @@ export default function ContactPage() {
                   href="mailto:RayJ@inspartners.com.au"
                   className="hover:underline"
                   style={{ color: "#052f46" }}
+                  aria-label="Send email to Ray Jiang at RayJ@inspartners.com.au"
                 >
                   RayJ@inspartners.com.au
                 </a>
@@ -90,6 +120,7 @@ export default function ContactPage() {
                   href="mailto:DavidL@inspartners.com.au"
                   className="hover:underline"
                   style={{ color: "#052f46" }}
+                  aria-label="Send email to David Li at DavidL@inspartners.com.au"
                 >
                   DavidL@inspartners.com.au
                 </a>
@@ -116,6 +147,7 @@ export default function ContactPage() {
                   href="tel:+61449588614"
                   className="hover:underline"
                   style={{ color: "#052f46" }}
+                  aria-label="Call Ray Jiang at 04 4958 8614"
                 >
                   04 4958 8614 Ray
                 </a>
@@ -123,6 +155,7 @@ export default function ContactPage() {
                   href="tel:+61466098666"
                   className="hover:underline"
                   style={{ color: "#052f46" }}
+                  aria-label="Call David Li at 04 6609 8666"
                 >
                   04 6609 8666 David
                 </a>
@@ -140,6 +173,8 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title="Inspire Partners Office Location - L1/534 Whitehorse Road, Mitcham, VIC 3132"
+              aria-label="Interactive map showing Inspire Partners office location at L1/534 Whitehorse Road, Mitcham, VIC 3132"
             ></iframe>
           </div>
         </div>

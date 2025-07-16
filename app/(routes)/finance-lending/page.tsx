@@ -1,9 +1,51 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+export const metadata: Metadata = {
+  title:
+    "Finance & Lending Services - Mortgage Broker Melbourne | Inspire Partners",
+  description:
+    "Expert finance and lending solutions with Ray Jiang, experienced mortgage broker. Residential loans, commercial finance, investment property, SMSF lending, and business finance in Melbourne.",
+  keywords: [
+    "mortgage broker Melbourne",
+    "home loans Melbourne",
+    "investment property loans",
+    "commercial finance",
+    "business loans",
+    "SMSF lending",
+    "first home buyer loans",
+    "refinancing Melbourne",
+    "construction loans",
+    "medical practice finance",
+    "Ray Jiang mortgage broker",
+    "residential lending",
+    "guarantor loans",
+    "private banking",
+  ],
+  openGraph: {
+    title: "Finance & Lending Services - Expert Mortgage Broker",
+    description:
+      "Professional finance and lending solutions for residential, commercial, and investment properties with experienced broker Ray Jiang.",
+    type: "website",
+    images: [
+      {
+        url: "/finance-lending.webp",
+        width: 1200,
+        height: 630,
+        alt: "Finance and Lending Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finance & Lending Solutions Melbourne",
+    description:
+      "Expert mortgage broker services for residential and commercial finance.",
+  },
+};
 
 export default function FinanceLendingPage() {
   const residentialServices = [

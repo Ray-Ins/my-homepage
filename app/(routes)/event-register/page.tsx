@@ -1,21 +1,54 @@
-"use client";
-
-import { useRef } from "react";
+import type { Metadata } from "next";
 import EmailForm from "@/components/EmailForm";
+import ScrollToFormButton from "@/components/ScrollToFormButton";
 import Image from "next/image";
 import { BadgeCheckIcon, Calendar, Clock, Globe } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 
+export const metadata: Metadata = {
+  title: "Event Registration - Business Structure Webinar | Inspire Partners",
+  description:
+    "Register for our exclusive webinar 'Am I in the Right Business Structure?' with CPA David Li. Learn about sole trader, partnership, company, and trust structures for medical professionals.",
+  keywords: [
+    "business structure webinar",
+    "medical practice business structure",
+    "sole trader vs company",
+    "trust structure advice",
+    "CPA webinar",
+    "tax structure planning",
+    "business entity selection",
+    "medical professional webinar",
+    "VAAUS webinar",
+    "BGPAA event",
+    "ABHF webinar",
+    "David Li CPA",
+  ],
+  openGraph: {
+    title: "Business Structure Webinar - Expert CPA Advice",
+    description:
+      "Join CPA David Li for an exclusive webinar on choosing the right business structure for medical professionals.",
+    type: "website",
+    images: [
+      {
+        url: "/event-register.webp",
+        width: 1200,
+        height: 630,
+        alt: "Business Structure Webinar Registration",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Business Structure Webinar Registration",
+    description:
+      "Learn about business structures with CPA David Li. Register now!",
+    images: ["/event-register.webp"],
+  },
+};
+
 export default function EventRegistrationPage() {
-  const formRef = useRef<HTMLDivElement>(null);
-
-  const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div
       className="py-12 min-h-screen relative"
@@ -44,17 +77,16 @@ export default function EventRegistrationPage() {
             Topic: Am I in the Right Business Structure?
           </h1>
           <p style={{ color: "#052f46" }}>
-            Strategic Tax & Lending Advisors for Medical Professionals, Upcoming
-            Webinar for VAAUS, BGPAA, and ABHF Members
+            Strategic Tax &amp; Lending Advisors for Medical Professionals,
+            Upcoming Webinar for VAAUS, BGPAA, and ABHF Members
           </p>
-          <Button
-            size="lg"
+          <ScrollToFormButton
+            targetId="registration-form"
             className="mt-4 h-[50px] w-[200px] hover:bg-gray-100 hover:cursor-pointer"
             style={{ backgroundColor: "#052f46", color: "#f5e5be" }}
-            onClick={scrollToForm}
           >
             Register Now
-          </Button>
+          </ScrollToFormButton>
         </div>
 
         <div className="w-full h-full relative">
@@ -173,7 +205,7 @@ export default function EventRegistrationPage() {
           <p>
             Founded by David Li (CPA & Tax Agent) and Ray Jiang (Finance
             Broker), Inspire Partners provides strategic tax, accounting, and
-            lending advice tailored to Australia’s healthcare professionals.
+            lending advice tailored to Australia's healthcare professionals.
             With deep experience in the healthcare sector, we help clients
             protect their income, structure wisely, and build lasting wealth.
           </p>
@@ -269,7 +301,7 @@ export default function EventRegistrationPage() {
         </div>
 
         {/* Registration Form */}
-        <div className="lg:col-span-4" ref={formRef}>
+        <div className="lg:col-span-4" id="registration-form">
           <h2 className="text-2xl font-bold mb-4" style={{ color: "#052f46" }}>
             Register Here
           </h2>

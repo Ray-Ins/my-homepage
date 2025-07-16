@@ -18,7 +18,7 @@ const AboutSection = () => {
                 style={{ borderColor: "#052f46" }}
               ></div>
               <Image
-                src="/toa-heftiba-4xe-yVFJCvw-unsplash.jpg"
+                src="/about-section.webp"
                 alt="Professional business meeting"
                 fill
                 className="object-cover rounded-lg shadow-lg z-10 relative"
@@ -75,7 +75,7 @@ const AboutSection = () => {
             <div className="flex flex-wrap gap-4">
               <Link href="/accounting-taxation">
                 <button
-                  className="px-6 py-3 border rounded-md hover:bg-gray-100 transition-colors font-medium cursor-pointer"
+                  className="px-6 py-3 border rounded-md hover:opacity-90 transition-colors cursor-pointer"
                   style={{
                     backgroundColor: "#052f46",
                     color: "#f5e5be",
@@ -87,7 +87,7 @@ const AboutSection = () => {
               </Link>
               <Link href="/contact">
                 <button
-                  className="px-6 py-3 border rounded-md hover:bg-gray-100 transition-colors font-medium cursor-pointer"
+                  className="px-6 py-3 border rounded-md hover:opacity-90 transition-colors cursor-pointer"
                   style={{ borderColor: "#052f46", color: "#052f46" }}
                 >
                   Contact Us
