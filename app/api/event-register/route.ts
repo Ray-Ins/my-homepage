@@ -4,7 +4,7 @@ import { render } from "@react-email/render";
 import WelcomeEmail from "@/emails/welcome";
 import { db } from "@/db";
 import { usersTable, userEventTable, eventTable } from "@/db/schema";
-import { eq, and } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { generateIcsFile } from "@/lib/ics-generator";
 import fs from "fs";
 import path from "path";
@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const DEFAULT_EVENT_ID = 1;
+const DEFAULT_EVENT_ID = 2;
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,28 +39,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 1. Get or create user
-    let userId: number;
-    const existingUser = await db
-      .select()
-      .from(usersTable)
-      .where(eq(usersTable.email, email))
-      .limit(1);
-
-    if (existingUser.length > 0) {
-      userId = existingUser[0].id;
-    } else {
-      const insertedUser = await db
-        .insert(usersTable)
-        .values({
+    // 1. Normalize email and upsert user by email (idempotent for repeat users)
+    const normalizedEmail = String(email).trim().toLowerCase();
+    const upsertedUser = await db
+      .insert(usersTable)
+      .values({
+        name,
+        email: normalizedEmail,
+        phone,
+        organisation,
+      })
+      .onConflictDoUpdate({
+        target: usersTable.email,
+        set: {
+          // Only update mutable profile fields; keep email as unique identity
           name,
-          email,
           phone,
           organisation,
-        })
-        .returning({ id: usersTable.id });
-      userId = insertedUser[0].id;
-    }
+        },
+      })
+      .returning({ id: usersTable.id });
+
+    const userId = upsertedUser[0].id;
 
     // 2. Get event details
     const event = await db
@@ -75,24 +75,11 @@ export async function POST(request: NextRequest) {
 
     const eventDetails = event[0];
 
-    // 3. Register user for event
-    const existingRegistration = await db
-      .select()
-      .from(userEventTable)
-      .where(
-        and(
-          eq(userEventTable.userId, userId),
-          eq(userEventTable.eventId, eventId)
-        )
-      )
-      .limit(1);
-
-    if (existingRegistration.length === 0) {
-      await db.insert(userEventTable).values({
-        userId,
-        eventId,
-      });
-    }
+    // 3. Register user for event (idempotent per user/event)
+    await db
+      .insert(userEventTable)
+      .values({ userId, eventId })
+      .onConflictDoNothing();
 
     // 4. Send confirmation email
     const eventDate = eventDetails.date; // Already in YYYY-MM-DD format
@@ -133,7 +120,7 @@ export async function POST(request: NextRequest) {
       zoomLink: emailProps.zoomLink,
       organizerEmail: emailProps.organizerEmail,
       organizerName: "Inspire Partners",
-      attendeeEmail: email,
+      attendeeEmail: normalizedEmail,
       attendeeName: name,
     });
 
@@ -206,7 +193,7 @@ export async function POST(request: NextRequest) {
     // Email options
     const mailOptions = {
       from: `"Inspire Partners" <${process.env.NEXT_PUBLIC_APP_USER}>`,
-      to: email,
+      to: normalizedEmail,
       subject: `You're Registered for ${eventDetails.eventName}!`,
       html: emailHtml,
       text: `Hello ${name}! You've successfully registered for ${eventDetails.eventName} on ${eventDate} at ${startTime}. Join via Zoom: ${eventDetails.zoomLink}. We look forward to seeing you there!`,
