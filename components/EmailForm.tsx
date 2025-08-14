@@ -29,7 +29,7 @@ const formSchema = z.object({
 // Infer the type from our schema
 type FormValues = z.infer<typeof formSchema>;
 
-export default function EmailForm() {
+export default function EmailForm({ eventId }: { eventId?: number }) {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<{
     type: "success" | "error" | null;
@@ -57,7 +57,7 @@ export default function EmailForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(eventId ? { ...values, eventId } : values),
       });
 
       const data = await response.json();
@@ -85,7 +85,7 @@ export default function EmailForm() {
   };
 
   return (
-    <Card 
+    <Card
       className="p-6 shadow-md"
       style={{
         backgroundColor: "rgba(227, 211, 160, 0.1)",
@@ -179,8 +179,8 @@ export default function EmailForm() {
             type="submit"
             className="mt-4 w-full h-[50px] hover:cursor-pointer"
             disabled={isLoading}
-            style={{ 
-              backgroundColor: "#052f46", 
+            style={{
+              backgroundColor: "#052f46",
               color: "#f5e5be",
               borderColor: "#052f46",
             }}
@@ -192,7 +192,10 @@ export default function EmailForm() {
             <div
               className="mt-4 p-3 rounded"
               style={{
-                backgroundColor: status.type === "success" ? "rgba(34, 197, 94, 0.1)" : "rgba(239, 68, 68, 0.1)",
+                backgroundColor:
+                  status.type === "success"
+                    ? "rgba(34, 197, 94, 0.1)"
+                    : "rgba(239, 68, 68, 0.1)",
                 color: status.type === "success" ? "#15803d" : "#dc2626",
                 borderColor: status.type === "success" ? "#15803d" : "#dc2626",
                 borderWidth: "1px",

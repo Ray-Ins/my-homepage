@@ -8,15 +8,29 @@ import {
   timestamp,
   primaryKey,
   text,
+  uniqueIndex,
+  pgEnum,
 } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 
-export const usersTable = pgTable("users", {
-  id: serial("id").primaryKey(),
-  name: varchar({ length: 255 }).notNull(),
-  email: varchar({ length: 255 }).notNull().unique(),
-  phone: varchar({ length: 255 }).notNull(),
-  organisation: varchar({ length: 255 }).notNull(),
-});
+export const usersTable = pgTable(
+  "users",
+  {
+    id: serial("id").primaryKey(),
+    name: varchar({ length: 255 }).notNull(),
+    email: varchar({ length: 255 }).notNull().unique(),
+    phone: varchar({ length: 255 }).notNull(),
+    organisation: varchar({ length: 255 }).notNull(),
+  },
+  (table) => {
+    return {
+      // Enforce case-insensitive uniqueness for emails
+      emailLowerUnique: uniqueIndex("users_email_lower_unique").on(
+        sql`lower(${table.email})`
+      ),
+    };
+  }
+);
 
 export const adminTable = pgTable("admins", {
   id: serial("id").primaryKey(),
@@ -38,6 +52,11 @@ export const eventTable = pgTable("events", {
 });
 
 // Many-to-many relationship table between users and events
+export const registrationStatusEnum = pgEnum("registration_status", [
+  "registered",
+  "closed",
+]);
+
 export const userEventTable = pgTable(
   "user_events",
   {
@@ -48,6 +67,7 @@ export const userEventTable = pgTable(
       .notNull()
       .references(() => eventTable.id),
     registeredAt: timestamp("registered_at").defaultNow().notNull(),
+    status: registrationStatusEnum("status").default("registered").notNull(),
   },
   (table) => {
     return {
