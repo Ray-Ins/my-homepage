@@ -196,30 +196,13 @@ export default async function EventRegistrationPage() {
               Why Attend?
             </h2>
             <p className="mb-4">
-              Choosing the right business structure can significantly impact
-              your tax obligations, legal protection, and long-term wealth. In
-              this session, David Li (CPA & Registered Tax Agent) will guide you
-              through:{" "}
-            </p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>
-                The pros and cons of sole trader, partnership, company, and
-                trust structures
-              </li>
-              <li>
-                How the wrong structure could cost you more in tax or leave you
-                exposed
-              </li>
-              <li>Real-world examples tailored to medical professionals</li>
-              <li>
-                When and how to restructure as your career or practice evolves
-              </li>
-            </ul>
-            <p className="mt-4">
-              For doctors, dentists, and clinic owners — whether you&apos;re at
-              the start of your journey or refining your setup for the next
-              stage, this exclusive webinar will equip you with insights to grow
-              with confidence.
+              If you earn income from your skills, knowledge, or expertise, the
+              Personal Services Income (PSI) rules could directly affect how
+              you're taxed and what deductions you can claim. In this session,
+              we'll break down the rules in plain language, share real-world
+              examples, and help you understand whether PSI applies to you.
+              You'll walk away with clarity, confidence, and practical steps to
+              manage your obligations and maximise your financial position.
             </p>
           </div>
 
@@ -231,8 +214,7 @@ export default async function EventRegistrationPage() {
             <li>GPs, dentists, specialists & allied health professionals</li>
             <li>Contractors, practice owners, and medical investors</li>
             <li>
-              Anyone unsure if their current business setup is still the right
-              fit
+              Anyone unsure whether the PSI or PSB rules apply to their business
             </li>
           </ul>
 
