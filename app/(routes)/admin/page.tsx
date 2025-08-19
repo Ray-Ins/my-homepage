@@ -18,6 +18,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { UserButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
+import { CSVLink } from "react-csv";
+import type { LinkProps as CSVLinkProps } from "react-csv/components/Link";
+import { Download } from "lucide-react";
 
 type EventItem = {
   id: number;
@@ -44,6 +48,7 @@ export default function AdminPage() {
   const [users, setUsers] = useState<UserForEvent[]>([]);
   const [count, setCount] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
     const loadEvents = async () => {
@@ -102,6 +107,57 @@ export default function AdminPage() {
     [events, selectedEventId]
   );
 
+  // Ensure client-only elements (like data: href) render after mount
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Deterministic date formatter to avoid SSR/client locale or timezone mismatches
+  const dateFormatter = useMemo(
+    () =>
+      new Intl.DateTimeFormat("en-AU", {
+        dateStyle: "medium",
+        timeStyle: "short",
+        timeZone: "Australia/Sydney",
+      }),
+    []
+  );
+
+  const csvHeaders: CSVLinkProps["headers"] = useMemo(
+    () => [
+      { label: "Name", key: "name" },
+      { label: "Email", key: "email" },
+      { label: "Phone", key: "phone" },
+      { label: "Organisation", key: "organisation" },
+      { label: "Registered At", key: "registeredAt" },
+    ],
+    []
+  );
+
+  const csvData = useMemo(
+    () =>
+      users.map((u) => ({
+        name: u.name,
+        email: u.email,
+        phone: u.phone,
+        organisation: u.organisation,
+        registeredAt: u.registeredAt
+          ? new Date(u.registeredAt).toISOString()
+          : "",
+      })),
+    [users]
+  );
+
+  const csvFilename = useMemo(() => {
+    if (!selectedEvent) return "registrations.csv";
+    const sanitize = (s: string) =>
+      s
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9-_]/g, "");
+    return `${sanitize(selectedEvent.eventName)}-${selectedEvent.date}.csv`;
+  }, [selectedEvent]);
+
   return (
     <div className="container mx-auto max-w-5xl py-10 space-y-6">
       <div className="flex items-center justify-between gap-4 flex-wrap">
@@ -114,19 +170,48 @@ export default function AdminPage() {
             Manage event registrations
           </p>
         </div>
-        <div className="min-w-[260px]">
-          <Select value={selectedEventId} onValueChange={setSelectedEventId}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select event" />
-            </SelectTrigger>
-            <SelectContent>
-              {events.map((ev) => (
-                <SelectItem key={ev.id} value={String(ev.id)}>
-                  {ev.eventName} ({ev.date})
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+        <div className="flex items-center gap-2">
+          <div className="w-72">
+            <Select value={selectedEventId} onValueChange={setSelectedEventId}>
+              <SelectTrigger className="w-72">
+                {selectedEvent ? (
+                  <div className="flex w-full items-center gap-1 min-w-0">
+                    <span className="truncate">{selectedEvent.eventName}</span>
+                    <span className="shrink-0 text-muted-foreground">
+                      ({selectedEvent.date})
+                    </span>
+                  </div>
+                ) : (
+                  <SelectValue placeholder="Select event" />
+                )}
+              </SelectTrigger>
+              <SelectContent>
+                {events.map((ev) => (
+                  <SelectItem key={ev.id} value={String(ev.id)}>
+                    {ev.eventName} ({ev.date})
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          {isMounted && (
+            <Button
+              asChild
+              variant="outline"
+              disabled={loading || users.length === 0 || !selectedEvent}
+            >
+              <CSVLink
+                data={csvData}
+                headers={csvHeaders}
+                filename={csvFilename}
+              >
+                <Download className="inline-block" />
+                <span className="sr-only md:not-sr-only md:ml-1">
+                  Download CSV
+                </span>
+              </CSVLink>
+            </Button>
+          )}
         </div>
       </div>
 
@@ -192,7 +277,7 @@ export default function AdminPage() {
                       </TableCell>
                       <TableCell className="whitespace-nowrap text-xs">
                         {u.registeredAt
-                          ? new Date(u.registeredAt).toLocaleString()
+                          ? dateFormatter.format(new Date(u.registeredAt))
                           : "-"}
                       </TableCell>
                     </TableRow>
