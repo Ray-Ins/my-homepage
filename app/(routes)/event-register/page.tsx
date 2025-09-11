@@ -196,13 +196,13 @@ export default async function EventRegistrationPage() {
               Why Attend?
             </h2>
             <p className="mb-4">
-              If you earn income from your skills, knowledge, or expertise, the
-              Personal Services Income (PSI) rules could directly affect how
-              you're taxed and what deductions you can claim. In this session,
-              we'll break down the rules in plain language, share real-world
-              examples, and help you understand whether PSI applies to you.
-              You'll walk away with clarity, confidence, and practical steps to
-              manage your obligations and maximise your financial position.
+              In today's shifting financial landscape, banks aren't always
+              offering the best deal—even to loyal customers. This session will
+              teach you how to confidently turn the tables: gather leverage,
+              compare competing offers, and negotiate real savings on rates,
+              fees, and loan conditions. You'll leave with practical strategies
+              that not only help you save money but also secure better terms
+              moving forward.
             </p>
           </div>
 
@@ -211,10 +211,18 @@ export default async function EventRegistrationPage() {
             Who Should Attend?{" "}
           </h2>
           <ul className="list-disc pl-5 space-y-2">
-            <li>GPs, dentists, specialists & allied health professionals</li>
-            <li>Contractors, practice owners, and medical investors</li>
             <li>
-              Anyone unsure whether the PSI or PSB rules apply to their business
+              Individual borrowers with home or investment loans who want to
+              secure a sharper deal.
+            </li>
+            <li>
+              Business owners managing residential or commercial lending
+              portfolios looking to reduce costs and improve terms.
+            </li>
+            <li>
+              Sophisticated families with complex lending structures seeking
+              smarter strategies to optimise their overall banking
+              relationships.
             </li>
           </ul>
 
