@@ -196,18 +196,33 @@ export default async function EventRegistrationPage() {
               Why Attend?
             </h2>
             <p className="mb-4">
-              In today's shifting financial landscape, banks aren't always
-              offering the best deal—even to loyal customers. This session will
-              teach you how to confidently turn the tables: gather leverage,
-              compare competing offers, and negotiate real savings on rates,
-              fees, and loan conditions. You'll leave with practical strategies
-              that not only help you save money but also secure better terms
-              moving forward.
+              Why Attend? Understanding how banks actually assess loan
+              applications gives you a real edge — whether you’re applying for a
+              home loan, refinancing, or funding business growth. This seminar
+              provides insider knowledge into the credit assessment process used
+              by banks and non-bank lenders, so you can:
             </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                Learn how lenders think - understand what matters most in a
+                credit assessment
+              </li>
+
+              <li>
+                Position your application for success - present your financials
+                and supporting documents in a way that strengthens your case
+              </li>
+              <li>Avoid common pitfalls that trigger declines or delays</li>
+              <li>Discover strategies to maximise your borrowing capacity</li>
+              <li>
+                Gain confidence in working with bankers, brokers, and financial
+                advisors
+              </li>
+            </ul>
           </div>
 
           {/* Additional Speaker Info */}
-          <h2 className="text-2xl font-bold mb-4" style={{ color: "#052f46" }}>
+          {/* <h2 className="text-2xl font-bold mb-4" style={{ color: "#052f46" }}>
             Who Should Attend?{" "}
           </h2>
           <ul className="list-disc pl-5 space-y-2">
@@ -224,7 +239,7 @@ export default async function EventRegistrationPage() {
               smarter strategies to optimise their overall banking
               relationships.
             </li>
-          </ul>
+          </ul> */}
 
           <h2 className="text-2xl font-bold mb-4" style={{ color: "#052f46" }}>
             About Inspire Partners
