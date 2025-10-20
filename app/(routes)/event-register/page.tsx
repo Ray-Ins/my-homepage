@@ -196,11 +196,11 @@ export default async function EventRegistrationPage() {
               Why Attend?
             </h2>
             <p className="mb-4">
-              Why Attend? Understanding how banks actually assess loan
-              applications gives you a real edge — whether you’re applying for a
-              home loan, refinancing, or funding business growth. This seminar
-              provides insider knowledge into the credit assessment process used
-              by banks and non-bank lenders, so you can:
+              Understanding how banks actually assess loan applications gives
+              you a real edge — whether you&apos;re applying for a home loan,
+              refinancing, or funding business growth. This seminar provides
+              insider knowledge into the credit assessment process used by banks
+              and non-bank lenders, so you can:
             </p>
             <ul className="list-disc pl-5 space-y-2">
               <li>
