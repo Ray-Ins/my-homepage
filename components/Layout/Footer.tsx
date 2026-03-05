@@ -142,7 +142,7 @@ const Footer = () => {
                   style={{ color: "#f5e5be" }}
                 />
                 <span style={{ color: "#f5e5be" }}>
-                  L1/534 Whitehorse Road, Mitcham, Vic 3132
+                  Office 9/602 Whitehorse Rd, Mitcham VIC 3132
                 </span>
               </li>
               <li className="flex items-start">

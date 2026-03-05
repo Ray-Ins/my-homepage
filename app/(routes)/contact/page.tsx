@@ -88,7 +88,7 @@ export default function ContactPage() {
                 Office Location
               </h3>
               <p style={{ color: "#052f46" }}>
-                L1/534 Whitehorse Road, Mitcham, Vic 3132
+                Office 9/602 Whitehorse Rd, Mitcham VIC 3132
               </p>
             </div>
           </div>
@@ -166,15 +166,15 @@ export default function ContactPage() {
           {/* Map */}
           <div className="mt-8 h-[300px] w-full rounded-lg overflow-hidden border border-gray-200">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8351288835384!2d145.18839807677254!3d-37.81384623417249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad63903cf4a29c3%3A0x9e72702a6a892d31!2s534%20Whitehorse%20Rd%2C%20Mitcham%20VIC%203132%2C%20Australia!5e0!3m2!1sen!2sus!4v1686152283599!5m2!1sen!2sus"
+              src="https://www.google.com/maps?q=Office+9%2F602+Whitehorse+Rd%2C+Mitcham+VIC+3132&hl=en&z=16&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Inspire Partners Office Location - L1/534 Whitehorse Road, Mitcham, VIC 3132"
-              aria-label="Interactive map showing Inspire Partners office location at L1/534 Whitehorse Road, Mitcham, VIC 3132"
+              title="Inspire Partners Office Location - Office 9/602 Whitehorse Rd, Mitcham VIC 3132"
+              aria-label="Interactive map showing Inspire Partners office location at Office 9/602 Whitehorse Rd, Mitcham VIC 3132"
             ></iframe>
           </div>
         </div>

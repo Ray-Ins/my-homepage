@@ -212,8 +212,7 @@ export default function TermsOfServicePage() {
                 <strong>Phone:</strong> 04 4958 8614
               </p>
               <p>
-                <strong>Address:</strong> L1/534 Whitehorse Road, Mitcham, Vic
-                3132
+                <strong>Address:</strong> Office 9/602 Whitehorse Rd, Mitcham VIC 3132
               </p>
             </div>
           </section>
