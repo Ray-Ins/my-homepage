@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     .select()
     .from(eventTable)
     .where(
-      and(eq(eventTable.available, true), gte(eventTable.date as any, today))
+      and(eq(eventTable.available, true), gte(eventTable.date as any, today)),
     )
     .orderBy(asc(eventTable.date))
     .limit(1);
@@ -71,7 +71,7 @@ export default async function EventRegistrationPage() {
     .select()
     .from(eventTable)
     .where(
-      and(eq(eventTable.available, true), gte(eventTable.date as any, today))
+      and(eq(eventTable.available, true), gte(eventTable.date as any, today)),
     )
     .orderBy(asc(eventTable.date))
     .limit(1);
@@ -81,7 +81,7 @@ export default async function EventRegistrationPage() {
         new Date(`${String(event.date)}T00:00:00`),
         "Australia/Sydney",
         "EEEE, d MMMM yyyy",
-        { locale: enAU }
+        { locale: enAU },
       )
     : "TBA";
   return (
@@ -196,28 +196,22 @@ export default async function EventRegistrationPage() {
               Why Attend?
             </h2>
             <p className="mb-4">
-              Understanding how banks actually assess loan applications gives
-              you a real edge — whether you&apos;re applying for a home loan,
-              refinancing, or funding business growth. This seminar provides
-              insider knowledge into the credit assessment process used by banks
-              and non-bank lenders, so you can:
+              The 2026 Federal Budget has introduced significant proposed
+              changes that may reshape the way Australians approach: With
+              increasing scrutiny from the ATO, ongoing interest rate
+              uncertainty, and changing credit policies across lenders,
+              strategic planning has never been more important. This webinar is
+              designed to help you understand what the Federal Budget may mean
+              for you from both a taxation and lending perspective.
             </p>
             <ul className="list-disc pl-5 space-y-2">
-              <li>
-                Learn how lenders think - understand what matters most in a
-                credit assessment
-              </li>
+              <li>Property investment</li>
 
-              <li>
-                Position your application for success - present your financials
-                and supporting documents in a way that strengthens your case
-              </li>
-              <li>Avoid common pitfalls that trigger declines or delays</li>
-              <li>Discover strategies to maximise your borrowing capacity</li>
-              <li>
-                Gain confidence in working with bankers, brokers, and financial
-                advisors
-              </li>
+              <li>Negative gearing</li>
+              <li>Capital gains tax planning</li>
+              <li>Small business and trust structures</li>
+              <li>Borrowing capacity and lending strategy</li>
+              <li>Wealth accumulation and long-term asset planning</li>
             </ul>
           </div>
 
