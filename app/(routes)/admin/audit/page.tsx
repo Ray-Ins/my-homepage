@@ -58,7 +58,7 @@ function AuditLogView() {
   const totalPages = data ? Math.max(1, Math.ceil(data.total / data.pageSize)) : 1;
 
   return (
-    <div className="container mx-auto max-w-6xl py-10 space-y-6">
+    <div className="container mx-auto max-w-5xl py-10 space-y-6">
       <div className="space-y-3">
         <div className="flex items-center gap-3">
           <h1 className="text-2xl font-semibold tracking-tight">Admin</h1>
