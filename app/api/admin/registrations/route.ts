@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin, authErrorResponse } from "@/lib/authz";
 import { db } from "@/db";
 import { userEventTable } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
 
 export async function GET(req: NextRequest) {
   try {
+    await requireAdmin();
     const { searchParams } = new URL(req.url);
     const eventIdParam = searchParams.get("eventId");
     if (!eventIdParam) {
@@ -23,6 +25,8 @@ export async function GET(req: NextRequest) {
     const count = result[0]?.count ?? 0;
     return NextResponse.json({ eventId, count });
   } catch (error) {
+    const authRes = authErrorResponse(error);
+    if (authRes) return authRes;
     console.error("Failed to fetch registrations count:", error);
     return NextResponse.json(
       { error: "Failed to fetch registrations count" },

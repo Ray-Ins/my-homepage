@@ -1,16 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin, authErrorResponse } from "@/lib/authz";
 import { db } from "@/db";
 import { eventTable } from "@/db/schema";
 import { asc } from "drizzle-orm";
 
 export async function GET(_req: NextRequest) {
   try {
+    await requireAdmin();
     const events = await db
       .select()
       .from(eventTable)
       .orderBy(asc(eventTable.date));
     return NextResponse.json(events);
   } catch (error) {
+    const authRes = authErrorResponse(error);
+    if (authRes) return authRes;
     console.error("Failed to fetch events:", error);
     return NextResponse.json(
       { error: "Failed to fetch events" },
@@ -21,6 +25,7 @@ export async function GET(_req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
+    await requireAdmin();
     const body = await req.json();
     const {
       eventName,
@@ -61,6 +66,8 @@ export async function POST(req: NextRequest) {
       .returning();
     return NextResponse.json(inserted, { status: 201 });
   } catch (error) {
+    const authRes = authErrorResponse(error);
+    if (authRes) return authRes;
     console.error("Failed to create event:", error);
     return NextResponse.json(
       { error: "Failed to create event" },

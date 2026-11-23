@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin, authErrorResponse } from "@/lib/authz";
 import { db } from "@/db";
 import { usersTable, userEventTable } from "@/db/schema";
 import { eq, asc } from "drizzle-orm";
 
 export async function GET(req: NextRequest) {
   try {
+    await requireAdmin();
     const { searchParams } = new URL(req.url);
     const eventIdParam = searchParams.get("eventId");
 
@@ -44,6 +46,8 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(users);
   } catch (error) {
+    const authRes = authErrorResponse(error);
+    if (authRes) return authRes;
     console.error("Failed to fetch users:", error);
     return NextResponse.json(
       { error: "Failed to fetch users" },

@@ -1,13 +1,14 @@
 import { ReactNode } from "react";
-import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { getSession, isAdmin } from "@/lib/authz";
 
 export default async function AdminLayout({
   children,
 }: {
   children: ReactNode;
 }) {
-  const user = await currentUser();
-  if (!user) redirect("/sign-in");
+  const session = await getSession();
+  if (!session) redirect("/sign-in?redirect=/admin");
+  if (!isAdmin(session.user)) redirect("/portal");
   return <>{children}</>;
 }

@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.NEXT_PUBLIC_APP_USER,
-    pass: process.env.NEXT_PUBLIC_APP_PASS,
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
 
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     if (!result.success) {
       return NextResponse.json(
         { error: "Invalid form data", details: result.error.format() },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -80,7 +80,7 @@ export async function POST(request: Request) {
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to process your request" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

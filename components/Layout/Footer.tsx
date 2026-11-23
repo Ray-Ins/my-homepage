@@ -24,6 +24,8 @@ const Footer = () => {
     { href: "/specialised-industries", label: "Specialised Industries" },
     { href: "/extended-services", label: "Extended Services" },
     { href: "/event-register", label: "Events" },
+    { href: "/blog", label: "Blog" },
+    { href: "/portal", label: "Upload documents" },
     { href: "/contact", label: "Contact" },
   ];
 

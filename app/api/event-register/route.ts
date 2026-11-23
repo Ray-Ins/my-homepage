@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.NEXT_PUBLIC_APP_USER,
-    pass: process.env.NEXT_PUBLIC_APP_PASS,
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
 
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
     if (!name || !email) {
       return NextResponse.json(
         { error: "Name and email are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -148,7 +148,7 @@ export async function POST(request: NextRequest) {
           process.cwd(),
           "public",
           "email-logo",
-          `email-logo${ext}`
+          `email-logo${ext}`,
         );
         if (fs.existsSync(testPath)) {
           logoPath = testPath;
@@ -176,7 +176,7 @@ export async function POST(request: NextRequest) {
         process.cwd(),
         "public",
         "webinar",
-        "webinar-image.jpg"
+        "webinar-image.jpg",
       );
       if (fs.existsSync(webinarImagePath)) {
         attachments.push({

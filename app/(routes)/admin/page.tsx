@@ -17,7 +17,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { UserButton } from "@clerk/nextjs";
+import UserMenu from "@/components/auth/UserMenu";
+import AdminNav from "@/components/admin/AdminNav";
 import { Button } from "@/components/ui/button";
 import { CSVLink } from "react-csv";
 import type { LinkProps as CSVLinkProps } from "react-csv/components/Link";
@@ -161,14 +162,12 @@ export default function AdminPage() {
   return (
     <div className="container mx-auto max-w-5xl py-10 space-y-6">
       <div className="flex items-center justify-between gap-4 flex-wrap">
-        <div className="space-y-1">
+        <div className="space-y-3">
           <div className="flex items-center gap-3">
             <h1 className="text-2xl font-semibold tracking-tight">Admin</h1>
-            <UserButton afterSignOutUrl="/" />
+            <UserMenu />
           </div>
-          <p className="text-sm text-muted-foreground">
-            Manage event registrations
-          </p>
+          <AdminNav />
         </div>
         <div className="flex items-center gap-2">
           <div className="w-72">
