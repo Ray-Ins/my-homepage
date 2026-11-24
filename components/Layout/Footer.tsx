@@ -25,7 +25,7 @@ const Footer = () => {
     { href: "/extended-services", label: "Extended Services" },
     { href: "/event-register", label: "Events" },
     { href: "/blog", label: "Blog" },
-    { href: "/portal", label: "Upload documents" },
+    { href: "/portal", label: "Clients" },
     { href: "/contact", label: "Contact" },
   ];
 
